@@ -1,0 +1,320 @@
+/* --- Videokehan Page - Sing-Galing System Styles --- */
+.videoke-system-container {
+    /* .page-content styles from global.css apply */
+    padding: 20px;
+}
+
+.videoke-system-container h2, .videoke-system-container > p {
+    text-align: center;
+}
+.videoke-system-container h2 i { color: #f0ff00; }
+.videoke-system-container > p {
+    color: #bbb;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.videoke-top-panel {
+    display: flex;
+    gap: 15px; /* Reduced gap */
+    margin-bottom: 20px;
+    align-items: stretch; /* Make columns equal height */
+    flex-wrap: wrap;
+}
+
+.coin-slot-area, .score-area {
+    flex: 1;
+    min-width: 180px;
+    text-align: center;
+    padding: 15px;
+    background-color: #252525; /* Slightly lighter dark */
+    border-radius: 8px;
+    border: 1px solid #f0ff00;
+    box-shadow: 0 0 10px rgba(240, 255, 0, 0.3), inset 0 0 5px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribute space inside */
+}
+#coinSlotImg {
+    width: 80px; /* Smaller coin slot */
+    margin-bottom: 8px;
+    align-self: center;
+    filter: drop-shadow(0 0 3px #fff);
+}
+.credits-display {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #f0ff00;
+    margin-top: 8px;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 5px #f0ff00;
+}
+#insertCoinBtn { width: 90%; margin: 10px auto 0 auto; font-size: 0.9em;}
+#insertCoinBtn i { margin-right: 5px; }
+
+.now-playing-display {
+    flex: 2.5; /* Main area for player */
+    min-width: 280px;
+    padding: 15px;
+    background-color: #101010; /* Darkest for player focus */
+    border-radius: 8px;
+    border: 2px solid #ff007f;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.5), inset 0 0 15px rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+}
+.now-playing-display h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #ff007f;
+    font-size: 1.4em; /* Slightly smaller */
+}
+.videoke-player-embed iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 8px;
+}
+#currentSingerDisplay, #nextSongDisplay {
+    font-size: 0.85em;
+    color: #ccc;
+    text-align: center;
+    margin-top: 4px;
+    padding: 3px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 3px;
+}
+#currentSingerDisplay .singer-name, #nextSongDisplay .next-song-title {
+    font-weight: bold;
+    color: #00f2ea;
+}
+
+.score-area h4 { margin-top: 0; margin-bottom: 8px; color: #00f2ea; font-size: 1.1em;}
+#scoreDisplay {
+    font-size: 2.5em; /* Smaller score */
+    font-weight: bold;
+    color: #ff007f;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 5px;
+    padding: 8px;
+    background-color: #000;
+    border-radius: 4px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #444;
+    text-shadow: 0 0 5px #ff007f;
+}
+#scoreMessage {
+    font-size: 0.8em;
+    color: #bbb;
+    min-height: 25px;
+}
+
+.videoke-controls-panel {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.songbook-area {
+    flex: 2;
+    padding: 15px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    border: 1px solid #4a4a4a;
+}
+.songbook-area h4 { margin-top: 0; }
+.songbook-nav {
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.songbook-tab-btn { margin: 3px; padding: 8px 12px; font-size: 0.85em; }
+
+#songSearch {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #444;
+    background-color: #252525;
+    color: #e0e0e0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+#songSearch:focus {
+    outline: none;
+    border-color: #00f2ea;
+    box-shadow: 0 0 5px #00f2ea;
+}
+.song-list-display {
+    max-height: 250px; /* Adjusted height */
+    overflow-y: auto;
+    padding-right: 8px;
+    border: 1px solid #333;
+    background-color: #101010;
+    border-radius: 4px;
+}
+.song-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 8px;
+    border-bottom: 1px solid #2a2a2a;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.song-list-item:hover { background-color: rgba(0, 242, 234, 0.1); }
+.song-list-item:last-child { border-bottom: none; }
+.song-info { display: flex; align-items: center; flex-grow: 1; overflow: hidden; }
+.song-info .code { font-size: 0.75em; color: #f0ff00; margin-right: 8px; font-family: 'Orbitron', sans-serif; }
+.song-info .title { font-weight: bold; color: #00f2ea; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-right: 5px; }
+.song-info .artist { font-size: 0.8em; color: #aaa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.select-song-btn { padding: 4px 8px; font-size: 0.75em; margin-left: 10px; flex-shrink: 0; }
+.no-songs { padding: 10px; text-align: center; color: #777; }
+
+.queue-area {
+    flex: 1;
+    padding: 15px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    border: 1px solid #4a4a4a;
+    min-width: 250px;
+}
+.queue-area h4 { margin-top: 0; }
+.queue-area h4 i { color: #f0ff00; }
+#songQueue {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+    max-height: 180px; /* Adjusted height */
+    overflow-y: auto;
+    border: 1px solid #333;
+    background-color: #101010;
+    border-radius: 4px;
+    padding: 8px;
+}
+#songQueue li {
+    padding: 6px;
+    border-bottom: 1px dashed #2a2a2a;
+    font-size: 0.85em;
+}
+#songQueue li:last-child { border-bottom: none; }
+#songQueue .queued-title { font-weight: bold; color: #00f2ea; }
+#songQueue .queued-singer { font-size: 0.8em; color: #aaa; }
+#songQueue .empty-queue { text-align: center; color: #777; font-style: italic; padding: 10px 0; }
+#passMicBtn, #pulutanBreakBtn { display: block; width: 100%; margin-top: 8px; font-size: 0.9em; }
+
+.audience-reactions {
+    text-align: center;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 5px;
+    border-top: 1px solid #333;
+}
+.reaction-emoji {
+    font-size: 1.6em;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: inline-block;
+    opacity: 0.7;
+}
+.reaction-emoji:hover { transform: scale(1.3); opacity: 1; }
+.reaction-popup { /* For JS-driven popups */
+    position: absolute;
+    font-size: 2em;
+    animation: floatUp 2s ease-out forwards;
+    pointer-events: none; /* So they don't interfere with clicks */
+    z-index: 2500;
+}
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-80px) scale(1.5); opacity: 0; }
+}
+
+
+/* Pulutan Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.85); /* Darker overlay */
+    backdrop-filter: blur(8px);
+    display: none; /* Re-ensure hidden */
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    background-color: #181818; /* Dark modal bg */
+    margin: auto; /* Center it */
+    padding: 25px;
+    border: 2px solid #ff007f;
+    width: 90%;
+    max-width: 550px; /* Slightly smaller max-width */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 40px #ff007f, 0 0 60px rgba(255,0,127,0.5);
+    position: relative;
+    animation: neonPulseModal 2s infinite alternate;
+}
+@keyframes neonPulseModal {
+    from { box-shadow: 0 0 30px #ff007f, 0 0 50px rgba(255,0,127,0.4); }
+    to { box-shadow: 0 0 40px #ff00aa, 0 0 70px rgba(255,0,170,0.6); }
+}
+.modal-content h2 { color: #ff007f; margin-top: 0; font-size: 2em;}
+.modal-content img {
+    max-width: 90%;
+    height: auto;
+    max-height: 250px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 2px solid #00f2ea;
+    box-shadow: 0 0 10px #00f2ea;
+}
+.modal-content p { color: #e0e0e0; font-size: 1.05em;}
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+.close-button:hover, .close-button:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 0 0 5px #fff;
+}
+
+/* Videokehan specific responsive */
+@media (max-width: 992px) {
+    .videoke-top-panel { flex-direction: column; }
+    .coin-slot-area, .score-area, .now-playing-display {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        flex-basis: auto; /* Reset flex-basis */
+    }
+     .now-playing-display { min-width: unset; }
+}
+@media (max-width: 768px) {
+    .videoke-controls-panel { flex-direction: column; }
+    .songbook-area, .queue-area { width: 100%; box-sizing: border-box; min-width: unset; }
+    .song-list ul { columns: 1; -webkit-columns: 1; -moz-columns: 1; }
+}

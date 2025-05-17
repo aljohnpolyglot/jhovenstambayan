@@ -1,0 +1,813 @@
+/* --- Index Page Specific Layout & Neon Enhancements --- */
+main.container {
+    padding-top: 20px; /* Adjusted for marquee */
+    padding-bottom: 30px;
+    display: flex;
+    gap: 25px; /* Slightly reduced gap */
+}
+
+.main-content {
+    flex: 3;
+    /* background-color, padding, border, box-shadow inherited from global.css */
+}
+
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adjusted gap */
+}
+
+/* Welcome Marquee */
+.welcome-marquee-container {
+    background-color: #000;
+    padding: 8px 0;
+    border-bottom: 2px solid #ff007f;
+    overflow: hidden; /* Important for marquee */
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(255,0,127,0.3);
+}
+.welcome-marquee {
+    display: inline-block; /* Or block, then use transform */
+    white-space: nowrap;
+    color: #f0ff00; /* Neon Yellow */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: 0 0 3px #f0ff00, 0 0 5px #f0ff00;
+    animation: marquee-scroll 25s linear infinite;
+}
+.welcome-marquee span i {
+    margin: 0 8px;
+    color: #00f2ea; /* Neon Cyan for icons */
+}
+
+@keyframes marquee-scroll {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+
+/* Jumbotron Stream Area */
+.jumbotron-stream-container {
+    background-color: #0a0a0a; /* Darker background for jumbotron */
+    /* background-image: url('../images/jumbotron_bg.jpg'); Optional subtle bg */
+    background-size: cover;
+    background-position: center;
+    padding: 15px;
+    border-radius: 15px;
+    border: 3px solid #00f2ea;
+    box-shadow: 0 0 25px #00f2ea, inset 0 0 20px rgba(0, 242, 234, 0.1);
+    margin-bottom: 20px;
+    position: relative; /* For animated spotlights */
+}
+.jumbotron-frame { /* Inner frame */
+    border: 5px outset #555; /* 3D-ish border */
+    background-color: #000;
+    padding: 5px;
+    border-radius: 8px;
+}
+.stream-player-container { /* Keeping this for the iframe wrapper */
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #444; /* Inner screen border */
+}
+.stream-player-container iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+/* Jumbotron Scoreboard */
+.jumbotron-scoreboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    border-top: 2px solid #ff007f;
+    margin-top: 5px; /* Space from video */
+    border-radius: 0 0 5px 5px;
+}
+.jumbotron-scoreboard .team-score {
+    font-weight: bold;
+    color: #f0ff00; /* Neon Yellow scores */
+    text-shadow: 0 0 3px #f0ff00;
+}
+.jumbotron-scoreboard .game-clock {
+    color: #ff0000; /* Red clock */
+    font-weight: bold;
+    font-size: 1.2em;
+    animation: clock-pulse 1s infinite alternate;
+}
+@keyframes clock-pulse {
+    from { text-shadow: 0 0 5px #ff0000; }
+    to { text-shadow: 0 0 10px #ff0000, 0 0 15px #ff4500; }
+}
+
+
+/* Live Commentary Bubble */
+.live-commentary-bubble {
+    background-color: rgba(0, 242, 234, 0.1);
+    border: 1px solid #00f2ea;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 242, 234, 0.3);
+}
+.live-commentary-bubble .commentator-name {
+    font-family: 'Luckiest Guy', cursive;
+    color: #00f2ea;
+    font-size: 1.3em;
+    margin: 0 0 5px 0;
+    text-shadow: 0 0 5px #00f2ea;
+}
+#djJhovenCommentary {
+    font-size: 1.1em;
+    color: #e0e0e0;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Channel Surfing Buttons */
+.channel-surfing-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.channel-btn {
+    background-color: #333;
+    color: #00f2ea;
+    border: 1px solid #00f2ea;
+    padding: 8px 12px;
+    margin: 0 5px;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0 0 3px #00f2ea;
+}
+.channel-btn:hover {
+    background-color: #00f2ea;
+    color: #111;
+    box-shadow: 0 0 10px #00f2ea;
+}
+.channel-btn i { margin-left: 5px; }
+
+
+.stream-info { /* Already styled in global, but can be overridden here if needed */
+    bottom: 10px; /* Adjusted to be above scoreboard */
+    left: 10px;
+    background-color: rgba(0,0,0,0.8);
+    border-left: 3px solid #ff007f;
+    z-index: 10; /* Ensure it's above scoreboard visually if overlap */
+}
+
+.live-badge { /* Already styled in global */
+    top: 10px;
+    right: 10px;
+}
+
+.highlights-section h3 {
+    border-top: 2px dashed #00f2ea;
+    padding-top: 20px;
+    margin-top: 25px;
+}
+.highlight-video iframe {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+}
+
+/* Sidebar Widgets - Index Specific Enhancements */
+.chatbox-widget, .pustahan-widget, .quick-links, .featured-pulutan-widget, .tambay-rules-sign {
+    background-color: #202020;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #00f2ea;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.2), inset 0 0 10px rgba(0,0,0,0.4);
+    margin-bottom: 20px;
+}
+.chatbox-widget h4, .pustahan-widget h4, .quick-links h4, .featured-pulutan-widget h4, .tambay-rules-sign h4 {
+    margin-top: 0;
+    border-bottom: 2px solid #ff007f;
+    padding-bottom: 8px;
+    /* color inherited from global h4 */
+}
+.neon-icon { color: #00f2ea; }
+.neon-icon-alt { color: #ff007f; }
+
+
+.chat-messages {
+    height: 150px; /* Adjusted */
+    overflow-y: auto;
+    border: 1px solid #383838; /* Lighter border */
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #181818;
+    border-radius: 4px;
+}
+.chat-message { font-size: 0.9em; margin-bottom: 8px; color: #ccc; }
+.chat-message .user { font-weight: bold; color: #00f2ea; }
+.chat-message .user i { margin-right: 5px; }
+.chatbox-widget input[type="text"] {
+    width: calc(100% - 180px); /* Accommodate two buttons */
+    padding: 10px;
+    border: 1px solid #383838;
+    border-radius: 3px 0 0 3px;
+    background-color: #252525;
+    color: #e0e0e0;
+    float: left;
+    box-sizing: border-box;
+    outline: none;
+}
+.chatbox-widget input[type="text"]:focus {
+    border-color: #00f2ea;
+    box-shadow: 0 0 5px #00f2ea;
+}
+.chatbox-widget button { /* General styling for chat buttons */
+    padding: 10px;
+    float: left;
+    box-sizing: border-box;
+    margin-top: 8px; /* Aligns with input box with its own margin-top */
+}
+.chatbox-widget button:first-of-type { /* Send button */
+    width: 85px;
+    border-radius: 0;
+    margin-left: -1px;
+}
+#shoutOutBtn { /* Shout out button */
+    width: auto; /* Auto width based on content */
+    border-radius: 0 3px 3px 0;
+    margin-left: -1px;
+}
+.chatbox-widget::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.pustahan-widget .bet-item { margin-bottom: 18px; }
+.pustahan-widget .bet-item p { margin: 0 0 8px 0; font-weight: bold; color: #e0e0e0; }
+.odds-display {
+    font-size: 0.85em;
+    color: #aaa;
+    margin-bottom: 8px !important; /* Override p margin */
+    font-style: italic;
+}
+.last-call-bets {
+    text-align: center;
+    color: #ff0000;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px;
+    background-color: rgba(255,0,0,0.1);
+    border: 1px dashed #ff0000;
+    border-radius: 4px;
+    margin-top: 15px;
+    animation: flash-red 1s infinite;
+}
+@keyframes flash-red {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.featured-pulutan-widget img {
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+    border: 2px solid #ff007f;
+    box-shadow: 0 0 10px #ff007f;
+}
+.featured-pulutan-widget p { text-align: center; color: #ccc; font-size: 0.95em; }
+.featured-pulutan-widget a.neon-button { display: block; text-align: center; width: 80%; margin: 10px auto 0 auto;}
+
+
+.quick-links ul { list-style: none; padding: 0; }
+.quick-links ul li a.quick-link-btn {
+    display: block;
+    padding: 10px 15px;
+    border: 1px solid #00f2ea;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: bold;
+    color: #00f2ea;
+    background-color: rgba(0, 242, 234, 0.05);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+.quick-links ul li a.quick-link-btn:hover {
+    background-color: #00f2ea;
+    color: #121212;
+    box-shadow: 0 0 10px #00f2ea;
+}
+.quick-links ul li a.quick-link-btn i { margin-right: 10px; }
+
+
+.tambay-rules-sign {
+    border: 2px dashed #f0ff00;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: rgba(240, 255, 0, 0.05);
+}
+.tambay-rules-sign h4 { color: #f0ff00; border-bottom-color: #f0ff00; }
+.tambay-rules-sign ol {
+    padding-left: 25px;
+    color: #ccc;
+}
+.tambay-rules-sign ol li { margin-bottom: 8px; }
+
+
+/* Index Page Specific Responsive */
+@media (max-width: 768px) {
+    main.container {
+        flex-direction: column;
+    }
+    .main-content, .sidebar {
+        flex: none;
+        width: 100%;
+    }
+    .stream-info { font-size: 0.8em; padding: 8px;} /* Even smaller on mobile */
+    .jumbotron-scoreboard { font-size: 0.9em; padding: 6px 10px; }
+    .jumbotron-scoreboard .game-clock { font-size: 1em; }
+
+    .chatbox-widget input[type="text"] {
+        width: calc(100% - 160px); /* Adjust if shoutout button also there */
+    }
+    #shoutOutBtn { width: auto; } /* Allow it to size based on text */
+}
+/* --- Index Page Specific Layout & Neon Enhancements --- */
+main.container {
+    padding-top: 20px; /* Adjusted for marquee */
+    padding-bottom: 30px;
+    display: flex;
+    gap: 25px;
+}
+
+.main-content {
+    flex: 3;
+}
+
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Welcome Marquee */
+.welcome-marquee-container {
+    background-color: #000;
+    padding: 8px 0;
+    border-bottom: 2px solid #ff007f;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(255,0,127,0.3);
+    margin-bottom: 20px; /* Space below marquee */
+}
+.welcome-marquee {
+    display: inline-block;
+    white-space: nowrap;
+    color: #f0ff00;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: 0 0 3px #f0ff00, 0 0 5px #f0ff00;
+    animation: marquee-scroll 30s linear infinite; /* Slower scroll */
+}
+.welcome-marquee span i {
+    margin: 0 10px;
+    color: #00f2ea;
+}
+
+@keyframes marquee-scroll {
+    0%   { transform: translateX(100vw); } /* Start off-screen right */
+    100% { transform: translateX(-100%); } /* End off-screen left */
+}
+
+
+/* Jumbotron Stream Area */
+.jumbotron-stream-container {
+    background-color: #0a0a0a;
+    background-image: url('../images/jumbotron_bg.jpg'); /* Optional */
+    background-size: cover;
+    background-position: center center;
+    padding: 10px; /* Reduced padding */
+    border-radius: 15px;
+    border: 3px solid #00f2ea;
+    box-shadow: 0 0 25px #00f2ea, inset 0 0 20px rgba(0, 242, 234, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+.jumbotron-frame {
+    border: 5px outset #444; /* Darker 3D border */
+    background-color: #000;
+    padding: 5px;
+    border-radius: 8px;
+}
+.stream-player-container {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #222; /* Darker inner screen border */
+}
+.stream-player-container iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Helps maintain video shape */
+    background-color: #000; /* Fallback if iframe is slow */
+}
+
+/* Jumbotron Scoreboard */
+.jumbotron-scoreboard {
+    display: flex;
+    justify-content: space-around; /* Better spacing */
+    align-items: center;
+    background-color: rgba(10, 10, 10, 0.85); /* Darker, more integrated */
+    color: #fff;
+    padding: 10px 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em; /* Adjusted */
+    border-top: 2px solid #ff007f;
+    margin-top: 5px;
+    border-radius: 0 0 5px 5px;
+    text-transform: uppercase;
+}
+.jumbotron-scoreboard .team-score {
+    font-weight: bold;
+    color: #f0ff00;
+    text-shadow: 0 0 3px #f0ff00, 0 0 5px #f0ff00;
+    font-size: 0.9em;
+}
+.jumbotron-scoreboard .game-clock {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 1.1em;
+    animation: clock-pulse 1.2s infinite alternate; /* Slightly different pulse */
+    padding: 0 10px;
+}
+@keyframes clock-pulse {
+    from { text-shadow: 0 0 4px #ff0000, 0 0 2px #fff; }
+    to { text-shadow: 0 0 8px #ff0000, 0 0 12px #ff4500, 0 0 3px #fff; }
+}
+
+/* Live Commentary Bubble */
+.live-commentary-bubble {
+    background-color: rgba(0, 242, 234, 0.1);
+    border: 1px solid #00f2ea;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 242, 234, 0.3);
+    position: relative; /* For pseudo-element tail */
+}
+.live-commentary-bubble::before { /* Speech bubble tail */
+    content: "";
+    position: absolute;
+    bottom: -10px; /* Position tail at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0 10px;
+    border-style: solid;
+    border-color: #00f2ea transparent transparent transparent;
+}
+.live-commentary-bubble .commentator-name {
+    font-family: 'Luckiest Guy', cursive;
+    color: #00f2ea;
+    font-size: 1.2em;
+    margin: 0 0 5px 0;
+    text-shadow: 0 0 5px #00f2ea;
+}
+#djJhovenCommentary {
+    font-size: 1.05em;
+    color: #e0e0e0;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Channel Surfing Buttons */
+.channel-surfing-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    border-top: 1px dashed #444;
+}
+.channel-btn {
+    background-color: #282828;
+    color: #00f2ea;
+    border: 1px solid #00f2ea;
+    padding: 6px 10px; /* Smaller buttons */
+    margin: 0 4px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85em;
+    box-shadow: 0 0 3px #00f2ea, inset 0 0 2px rgba(0,242,234,0.3);
+    text-transform: none;
+}
+.channel-btn:hover {
+    background-color: #00f2ea;
+    color: #111;
+    box-shadow: 0 0 10px #00f2ea, 0 0 5px #fff;
+}
+.channel-btn i { margin-right: 4px; }
+
+.stream-info {
+    bottom: 50px; /* Adjusted to be above Jumbotron scoreboard */
+}
+
+.highlights-section h3 {
+    border-top: 2px dashed #00f2ea;
+    padding-top: 20px;
+    margin-top: 25px;
+}
+.highlight-video iframe {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+}
+
+/* Sidebar Widgets - Index Specific Enhancements */
+.chatbox-widget, .pustahan-widget, .quick-links, .featured-pulutan-widget, .tambay-rules-sign {
+    background-color: #1f1f1f; /* Slightly different dark shade for sidebar widgets */
+    padding: 18px;
+    border-radius: 10px; /* More rounded */
+    border: 1px solid #00f2ea;
+    box-shadow: 0 0 12px rgba(255, 0, 127, 0.15), inset 0 0 8px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+.neon-icon { color: #00f2ea; text-shadow: 0 0 3px #00f2ea; }
+.neon-icon-alt { color: #ff007f; text-shadow: 0 0 3px #ff007f; }
+
+.chat-messages {
+    height: 160px; /* Adjusted */
+    border: 1px solid #333;
+    padding: 8px;
+    background: #111;
+}
+.chat-message .user i { margin-right: 6px; }
+.chat-input-area {
+    display: flex;
+    margin-top: 10px;
+}
+.chatbox-widget input[type="text"] {
+    flex-grow: 1; /* Take available space */
+    width: auto; /* Override previous width */
+    border-radius: 3px 0 0 3px;
+    margin-top: 0; /* Remove individual margin */
+    float: none; /* Remove float */
+}
+.chatbox-widget button { /* For Send and Shout Out */
+    flex-shrink: 0; /* Don't shrink */
+    margin-top: 0;
+    margin-left: -1px;
+    float: none;
+    padding: 10px; /* Ensure consistent padding */
+}
+.chatbox-widget button:first-of-type { /* Send button */
+    border-radius: 0;
+}
+#shoutOutBtn { /* Shout out button */
+    border-radius: 0 3px 3px 0;
+}
+.chat-message.shoutout { /* Style for shouted messages */
+    background-color: rgba(255, 0, 127, 0.15);
+    color: #ff007f;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 3px;
+    border-left: 3px solid #ff007f;
+    animation: pulse-shoutout 0.5s ease-out;
+}
+@keyframes pulse-shoutout {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+
+.pustahan-widget .bet-item p { font-size: 0.95em;}
+.odds-display {
+    font-size: 0.8em;
+    color: #999;
+}
+.last-call-bets i { color: #ff0000; }
+
+.featured-pulutan-widget img {
+    width: 100%;
+    max-width: 180px; /* Slightly smaller for sidebar */
+    border: 2px solid #ff007f;
+    box-shadow: 0 0 8px #ff007f;
+}
+.featured-pulutan-widget p { font-size: 0.9em; }
+.featured-pulutan-widget a.neon-button { width: 90%; font-size: 0.9em;}
+
+.quick-links ul li a.quick-link-btn {
+    padding: 8px 12px; /* Slightly smaller */
+    font-size: 0.9em;
+}
+.quick-links ul li a.quick-link-btn i { margin-right: 8px; }
+
+.tambay-rules-sign {
+    border-color: #f0ff00;
+    background-color: rgba(240, 255, 0, 0.03);
+    box-shadow: 0 0 8px rgba(240,255,0,0.2);
+}
+.tambay-rules-sign h4 { color: #f0ff00; border-bottom-color: #f0ff00; }
+.tambay-rules-sign ol { padding-left: 20px; color: #ccc; font-size: 0.9em;}
+.tambay-rules-sign ol li { margin-bottom: 6px; }
+
+
+/* Index Page Specific Responsive */
+@media (max-width: 992px) {
+    .jumbotron-scoreboard { font-size: 0.9em; }
+}
+
+@media (max-width: 768px) {
+    main.container { flex-direction: column; }
+    .main-content, .sidebar { flex: none; width: 100%; }
+    .stream-info { font-size: 0.8em; padding: 8px; bottom: 45px; /* Adjust if scoreboard height changes */ }
+    .jumbotron-scoreboard { flex-wrap: wrap; justify-content: center; gap: 5px; font-size: 0.8em;}
+    .jumbotron-scoreboard .team-score { flex-basis: 45%; text-align: center; }
+    .jumbotron-scoreboard .game-clock { flex-basis: 100%; text-align: center; margin-top: 5px; }
+    .welcome-marquee { font-size: 1em; }
+    .live-commentary-bubble { padding: 10px; }
+    .live-commentary-bubble .commentator-name { font-size: 1.1em; }
+    #djJhovenCommentary { font-size: 1em; }
+    .chatbox-widget input[type="text"] { width: calc(100% - 140px); } /* Adjust for 2 buttons */
+    .chatbox-widget button { width: auto; padding: 10px 8px; } /* Allow buttons to size based on icon/text */
+    #shoutOutBtn { padding: 10px 8px; }
+}
+
+@media (max-width: 480px) {
+    .jumbotron-scoreboard .team-score { font-size: 0.75em;}
+    .jumbotron-scoreboard .game-clock { font-size: 0.9em; }
+    .live-commentary-bubble .commentator-name { font-size: 1em; }
+    #djJhovenCommentary { font-size: 0.9em; }
+    .channel-btn { font-size: 0.75em; padding: 5px 8px; }
+    .welcome-marquee { font-size: 0.9em; }
+    .chatbox-widget input[type="text"] { width: calc(100% - 110px); font-size: 0.9em; }
+    .chatbox-widget button { font-size: 0.8em; padding: 10px 6px; }
+    .pustahan-widget .bet-item p { font-size: 0.9em; }
+}
+/* --- Jhoven's Corner Section Styles --- */
+.jhovens-corner-section {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 3px dashed #ff007f; /* Neon Pink dashed separator */
+}
+
+.jhovens-corner-section h3 {
+    text-align: center;
+    font-size: 2em; /* Make it a bit smaller than main section H2 */
+    color: #ff007f; /* Neon Pink for this section title */
+    text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 3px #fff;
+    margin-bottom: 25px;
+}
+.jhovens-corner-section h3 .neon-icon-pink {
+    color: #ff007f; /* Ensure icon matches */
+}
+
+.jhovens-corner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.corner-item {
+    background-color: #1f1f1f; /* Slightly different dark bg for items */
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.corner-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 242, 234, 0.2);
+    border-color: #00f2ea;
+}
+
+.corner-item h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #00f2ea; /* Neon Cyan for item titles */
+    text-shadow: 0 0 3px #00f2ea;
+}
+.corner-item h4 i {
+    margin-right: 8px;
+}
+.neon-icon-blue { color: #007bff; text-shadow: 0 0 3px #007bff;}
+.neon-icon-yellow { color: #f0ff00; text-shadow: 0 0 3px #f0ff00;}
+.neon-icon-cyan { color: #00f2ea; text-shadow: 0 0 3px #00f2ea;}
+.neon-icon-gold { color: #ffd700; text-shadow: 0 0 3px #ffd700;}
+
+
+.corner-item .image-frame {
+    width: 100%;
+    max-height: 250px; /* Control image height */
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border: 2px solid #444;
+    background-color: #000; /* Black bg for images */
+}
+.corner-item .image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Use 'contain' to see whole image, or 'cover' to fill */
+    display: block;
+}
+
+.corner-item.video-item video {
+    width: 100%;
+    max-height: 250px;
+    border-radius: 6px;
+    border: 2px solid #00f2ea; /* Neon border for video */
+    background-color: #000;
+}
+
+.corner-item .caption {
+    font-size: 0.9em;
+    color: #bbb;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Specific styles for unique items */
+.leaked-script {
+    border-color: #ff0000; /* Red border for "leaked" */
+    box-shadow: 0 0 10px #ff0000;
+    position: relative;
+}
+.top-secret-stamp {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255,0,0,0.7);
+    color: white;
+    padding: 3px 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transform: rotate(-5deg);
+    font-weight: bold;
+}
+
+.special-collectible .display-case {
+    padding: 10px;
+    background: linear-gradient(45deg, #222, #333);
+    border: 2px solid #ffd700; /* Gold border for collectible */
+    box-shadow: 0 0 15px #ffd700;
+}
+.special-collectible .display-case img {
+    border: none; /* Remove inner border if it's in a display case */
+}
+.special-collectible h4 i.neon-icon-gold {
+    animation: gold-pulse 1.5s infinite;
+}
+@keyframes gold-pulse {
+    0% { text-shadow: 0 0 3px #ffd700, 0 0 5px #ffd700; }
+    50% { text-shadow: 0 0 8px #ffd700, 0 0 15px #fff200; }
+    100% { text-shadow: 0 0 3px #ffd700, 0 0 5px #ffd700; }
+}
+
+/* Responsive for Jhoven's Corner */
+@media (max-width: 600px) {
+    .jhovens-corner-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    .corner-item .image-frame, .corner-item.video-item video {
+        max-height: 200px; /* Adjust height for smaller screens */
+    }
+    .jhovens-corner-section h3 { font-size: 1.7em; }
+    .corner-item h4 { font-size: 1em; }
+}
+.chat-message.ai-message {
+    background-color: rgba(0, 242, 234, 0.1); /* Faint Neon Cyan background */
+    border-left: 3px solid #00f2ea;
+    padding: 8px;
+    border-radius: 4px;
+}
+.chat-message.ai-message .user {
+    color: #00f2ea; /* Brighter name for AI */
+    font-style: italic;
+}
+.chat-message.ai-message .user i {
+    animation: ai-pulse 2s infinite ease-in-out;
+}
+@keyframes ai-pulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.7; }
+}

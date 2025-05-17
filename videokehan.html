@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sing-Galing sa Tambayan ni Jhoven!</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/videokehan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo_tambayan.png" alt="Jhoven's Tambayan Logo">
+                <h1>Jhoven's Tambayan</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#nba-stream-section"><i class="fas fa-basketball-ball"></i> NBA Live!</a></li>
+                    <li><a href="iskedyul.html"><i class="fas fa-calendar-alt"></i> Iskedyul</a></li>
+                    <li><a href="bilyaran.html"><i class="fas fa-gamepad-alt"></i> Bilyaran</a></li>
+                    <li><a href="videokehan.html" class="active"><i class="fas fa-microphone-alt"></i> Videokehan</a></li>
+                    <li><a href="pagkain.html"><i class="fas fa-utensils"></i> Pagkain</a></li>
+                    <li><a href="pustahan.html"><i class="fas fa-dice"></i> Pustahan!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-content">
+        <section class="videoke-system-container">
+            <div class="videoke-top-panel">
+                <div class="coin-slot-area">
+                    <img src="images/coin_slot.png" alt="Videoke Coin Slot" id="coinSlotImg">
+                    <button id="insertCoinBtn" class="neon-button-alt"><i class="fas fa-coins"></i> Hulog 5 Piso!</button>
+                    <div class="credits-display">CREDITS: <span id="credits">0</span></div>
+                </div>
+                <div class="now-playing-display">
+                    <h3><i class="fas fa-tv"></i> NOW PLAYING <i class="fas fa-volume-up"></i></h3>
+                    <div id="videokePlayer" class="videoke-player-embed">
+                        <!-- YouTube Embed will go here via JS or default -->
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/2PG44qyJeRA?autoplay=0&enablejsapi=1" title="Videoke Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="youtubePlayer"></iframe>
+                    </div>
+                    <div id="currentSingerDisplay">Singer: <span class="singer-name">Tambay #1</span></div>
+                    <div id="nextSongDisplay">Next: <span class="next-song-title">Wala pa... Pili na!</span></div>
+                </div>
+                <div class="score-area">
+                    <h4><i class="fas fa-star"></i> IYONG PUNTOS!</h4>
+                    <div id="scoreDisplay" class="score-value">--</div>
+                    <div id="scoreMessage" class="score-feedback">Pili na ng kanta!</div>
+                </div>
+            </div>
+
+            <div class="videoke-controls-panel">
+                <div class="songbook-area">
+                    <h4><i class="fas fa-book-open"></i> Digital Songbook ni Jhoven</h4>
+                    <div class="songbook-nav">
+                        <button class="songbook-tab-btn active" onclick="showSongCategory('opm')">OPM Hits</button>
+                        <button class="songbook-tab-btn" onclick="showSongCategory('english')">English Classics</button>
+                        <button class="songbook-tab-btn" onclick="showSongCategory('new')">Bagong Sikat</button>
+                        <button class="songbook-tab-btn" onclick="showSongCategory('jhovens')">Jhoven's Faves <i class="fas fa-crown"></i></button>
+                    </div>
+                    <input type="text" id="songSearch" placeholder="Hanapin: Song Code o Title..." onkeyup="searchSongs()">
+                    <div id="songList" class="song-list-display">
+                        <!-- Songs will be populated by JS -->
+                        <p>Pili ng kategorya o mag-search...</p>
+                    </div>
+                </div>
+
+                <div class="queue-area">
+                    <h4><i class="fas fa-list-ol"></i> Mga Nakapila (Reserved)</h4>
+                    <ul id="songQueue">
+                        <!-- Reserved songs will appear here -->
+                        <li class="empty-queue">Wala pang naka-reserve. Mauna ka na!</li>
+                    </ul>
+                    <button id="passMicBtn" class="neon-button"><i class="fas fa-random"></i> Pass the Mic!</button>
+                    <button id="pulutanBreakBtn" class="neon-button-alt"><i class="fas fa-drumstick-bite"></i> Pulutan Break!</button>
+                </div>
+            </div>
+            <div class="audience-reactions">
+                <span class="reaction-emoji" onclick="showReaction('👍')">👍</span>
+                <span class="reaction-emoji" onclick="showReaction('❤️')">❤️</span>
+                <span class="reaction-emoji" onclick="showReaction('😂')">😂</span>
+                <span class="reaction-emoji" onclick="showReaction('🎤🔥')">🎤🔥</span>
+                <span class="reaction-emoji" onclick="showReaction('🎉')">🎉</span>
+            </div>
+        </section>
+    </main>
+    
+    <div id="pulutanModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closePulutanModal()">×</span>
+            <h2>PULUTAN BREAK MUNA!</h2>
+            <img src="images/pulutan_break_bg.jpg" alt="Masarap na Pulutan">
+            <p>Tara, chibog! Order na sa <a href="pagkain.html" onclick="closePulutanModal()">Pagkain Section</a>!</p>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Jhoven's Tambayan - Bawal ang Kill Joy Dito! <i class="fas fa-music"></i><i class="fas fa-glass-martini-alt"></i></p>
+        </div>
+    </footer>
+
+    <script src="js/global_scripts.js"></script>
+    <script src="js/videoke_system.js"></script>
+</body>
+</html>

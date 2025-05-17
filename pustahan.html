@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pustahan Central - Jhoven's Tambayan</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pustahan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@400;700&family=Orbitron:wght@700&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo_tambayan.png" alt="Jhoven's Tambayan Logo">
+                <h1>Jhoven's Tambayan</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#nba-stream-section"><i class="fas fa-basketball-ball"></i> NBA Live!</a></li>
+                    <li><a href="iskedyul.html"><i class="fas fa-calendar-alt"></i> Iskedyul</a></li>
+                    <li><a href="bilyaran.html"><i class="fas fa-gamepad-alt"></i> Bilyaran</a></li>
+                    <li><a href="videokehan.html"><i class="fas fa-microphone-alt"></i> Videokehan</a></li>
+                    <li><a href="pagkain.html"><i class="fas fa-utensils"></i> Pagkain</a></li>
+                    <li><a href="pustahan.html" class="active"><i class="fas fa-dice"></i> Pustahan!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-content">
+        <section class="pustahan-central-container">
+            <div class="pustahan-header">
+                <h2 class="neon-sign-text-pustahan"><span><i class="fas fa-dice-d20"></i> PUSTAHAN CENTRAL <i class="fas fa-sack-dollar"></i></span></h2>
+                <p class="tagline">"Dito, Bawat Taya, May Pag-asa (ng Chichirya o Yabang Rights!)"</p>
+                <p class="entertainment-warning"><i class="fas fa-exclamation-triangle"></i> FOR ENTERTAINMENT PURPOSES ONLY! Virtual Chichirya Points lang ang taya dito, mga Paps! Bawal ang totoong pera! <i class="fas fa-ban"></i></p>
+            </div>
+
+            <!-- NBA Betting Section -->
+            <div class="betting-section" id="nba-bets">
+                <h3 class="section-title-neon"><i class="fas fa-basketball-ball"></i> NBA Game Lines <i class="fas fa-bolt"></i></h3>
+                
+                <!-- Game 1 Betting Board -->
+                <div class="betting-board" data-game-id="nba-game-1">
+                    <div class="game-matchup">
+                        <div class="team-info-bet">
+                            <img src="https://cdn.nba.com/logos/nba/1610612752/global/L/logo.svg" alt="New York Knicks Logo" class="team-logo-pustahan">
+                            NY Knicks
+                        </div>
+                        <div class="vs-indicator-bet">VS <span class="game-datetime-bet">APR 17 - 03:00 AM</span></div>
+                        <div class="team-info-bet">
+                            <img src="https://cdn.nba.com/logos/nba/1610612738/global/L/logo.svg" alt="Boston Celtics Logo" class="team-logo-pustahan">
+                            Boston Celtics
+                        </div>
+                    </div>
+                    <div class="bet-options-grid">
+                        <div class="bet-type-block">
+                            <h4>Mananalo? (Moneyline)</h4>
+                            <button class="bet-option" data-bet-desc="NY Knicks to Win" data-odds="2.1" data-team="NYK">Knicks <span class="odds">(Odds: 2.1 - Underdog Power!)</span></button>
+                            <button class="bet-option" data-bet-desc="Boston Celtics to Win" data-odds="1.8" data-team="BOS">Celtics <span class="odds">(Odds: 1.8 - Paborito!)</span></button>
+                        </div>
+                        <div class="bet-type-block">
+                            <h4>Lamang/Dehado (Spread)</h4>
+                            <button class="bet-option" data-bet-desc="NY Knicks +3.5" data-odds="1.9">Knicks +3.5 <span class="odds">(1.9)</span></button>
+                            <button class="bet-option" data-bet-desc="Boston Celtics -3.5" data-odds="1.9">Celtics -3.5 <span class="odds">(1.9)</span></button>
+                        </div>
+                        <div class="bet-type-block">
+                            <h4>Total Puntos (Over/Under)</h4>
+                            <button class="bet-option" data-bet-desc="Over 218.5 Points" data-odds="1.9">Over 218.5 <span class="odds">(1.9)</span></button>
+                            <button class="bet-option" data-bet-desc="Under 218.5 Points" data-odds="1.9">Under 218.5 <span class="odds">(1.9)</span></button>
+                        </div>
+                    </div>
+                    <div class="player-props-section">
+                        <h5><i class="fas fa-user-ninja"></i> Jhoven's Player Props:</h5>
+                        <button class="bet-option prop-bet" data-bet-desc="J. Brunson Over 29.5 Pts" data-odds="1.85">Brunson O29.5 Pts <span class="odds">(1.85)</span></button>
+                        <button class="bet-option prop-bet" data-bet-desc="J. Tatum Over 8.5 Rebs" data-odds="2.0">Tatum O8.5 Rebs <span class="odds">(2.0)</span></button>
+                    </div>
+                </div>
+
+                <!-- Game 2 Betting Board -->
+                <div class="betting-board" data-game-id="nba-game-2">
+                    <div class="game-matchup">
+                        <div class="team-info-bet">
+                            <img src="https://cdn.nba.com/logos/nba/1610612747/global/L/logo.svg" alt="Los Angeles Lakers Logo" class="team-logo-pustahan">
+                            LA Lakers
+                        </div>
+                        <div class="vs-indicator-bet">VS <span class="game-datetime-bet">APR 18 - 07:00 PM</span></div>
+                        <div class="team-info-bet">
+                            <img src="https://cdn.nba.com/logos/nba/1610612744/global/L/logo.svg" alt="Golden State Warriors Logo" class="team-logo-pustahan">
+                            GS Warriors
+                        </div>
+                    </div>
+                     <div class="bet-options-grid">
+                        <div class="bet-type-block">
+                            <h4>Mananalo? (Moneyline)</h4>
+                            <button class="bet-option" data-bet-desc="LA Lakers to Win" data-odds="1.75" data-team="LAL">Lakers <span class="odds">(1.75 - Showtime!)</span></button>
+                            <button class="bet-option" data-bet-desc="GS Warriors to Win" data-odds="2.3" data-team="GSW">Warriors <span class="odds">(2.3 - Splash Bros!)</span></button>
+                        </div>
+                        <div class="bet-type-block">
+                            <h4>Lamang/Dehado (Spread)</h4>
+                            <button class="bet-option" data-bet-desc="LA Lakers -2.5" data-odds="1.9">Lakers -2.5 <span class="odds">(1.9)</span></button>
+                            <button class="bet-option" data-bet-desc="GS Warriors +2.5" data-odds="1.9">Warriors +2.5 <span class="odds">(1.9)</span></button>
+                        </div>
+                        <div class="bet-type-block">
+                            <h4>Total Puntos (Over/Under)</h4>
+                            <button class="bet-option" data-bet-desc="Over 225.5 Points" data-odds="1.9">Over 225.5 <span class="odds">(1.9)</span></button>
+                            <button class="bet-option" data-bet-desc="Under 225.5 Points" data-odds="1.9">Under 225.5 <span class="odds">(1.9)</span></button>
+                        </div>
+                    </div>
+                    <div class="player-props-section">
+                        <h5><i class="fas fa-user-ninja"></i> Jhoven's Player Props:</h5>
+                        <button class="bet-option prop-bet" data-bet-desc="LeBron James Triple-Double" data-odds="3.5">LeBron Triple-Double? <span class="odds">(3.5 - YES!)</span></button>
+                        <button class="bet-option prop-bet" data-bet-desc="Steph Curry Over 4.5 3PM" data-odds="1.8">Steph Curry O4.5 3PT <span class="odds">(1.8)</span></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Jhoven's Crazy Props Section -->
+            <div class="betting-section" id="crazy-props">
+                <h3 class="section-title-neon pink-neon"><i class="fas fa-grin-stars"></i> Jhoven's Crazy Tambay Props! <i class="fas fa-question-circle"></i></h3>
+                <div class="betting-board crazy-props-board">
+                     <div class="bet-type-block single-prop">
+                        <h4>Magta-trash talk ba si Draymond Green? (vs Lakers)</h4>
+                        <button class="bet-option" data-bet-desc="Draymond Trash Talk: OO!" data-odds="1.2 (Halos Sure Na!)">OO NAMAN! <span class="odds">(1.2)</span></button>
+                        <button class="bet-option" data-bet-desc="Draymond Trash Talk: HINDI" data-odds="5.0 (Imposible!)">HINDI?! <span class="odds">(5.0)</span></button>
+                    </div>
+                    <div class="bet-type-block single-prop">
+                        <h4>Ilang beses magre-reklamo si Luka sa Ref? (Next Mavs Game)</h4>
+                        <button class="bet-option" data-bet-desc="Luka Complaints Over 3.5" data-odds="1.7">Over 3.5 Reklamo <span class="odds">(1.7)</span></button>
+                        <button class="bet-option" data-bet-desc="Luka Complaints Under 3.5" data-odds="2.1">Under 3.5 Reklamo <span class="odds">(2.1)</span></button>
+                    </div>
+                    <div class="bet-type-block single-prop">
+                        <h4>May technical foul ba si Coach J (Jhoven) habang nanonood?</h4>
+                        <button class="bet-option" data-bet-desc="Jhoven Tech Foul: OO!" data-odds="1.1 (100%!)">SYEMPRE OO! <span class="odds">(1.1)</span></button>
+                        <button class="bet-option" data-bet-desc="Jhoven Tech Foul: HINDI" data-odds="10.0 (Miracle!)">HINDI?! (Rare) <span class="odds">(10.0)</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Bets & How To Bet -->
+            <div class="pustahan-sidebar-info">
+                <div class="current-bets-widget">
+                    <h4><i class="fas fa-receipt neon-icon-cyan"></i> Mga Taya Mong Nakasalang:</h4>
+                    <ul id="currentBetsList">
+                        <li class="no-bets">Wala ka pang taya, Paps! Taya na!</li>
+                        <!-- Bets will be added here by JS -->
+                    </ul>
+                </div>
+
+                <div class="how-to-bet-widget">
+                    <h4><i class="fas fa-question-circle neon-icon-yellow"></i> Paano Tumaya (The Tambayan Way)?</h4>
+                    <ol>
+                        <li><i class="fas fa-mouse-pointer"></i> Pili ng laro at taya.</li>
+                        <li><i class="fas fa-coins"></i> Ilagay ang "Chichirya Points" mo.</li>
+                        <li><i class="fas fa-praying-hands"></i> Magdasal sa mga Basketball Gods.</li>
+                        <li><i class="fas fa-trophy"></i> Manalo o Matalo, order pa rin ng Sisig!</li>
+                    </ol>
+                </div>
+            </div>
+
+             <div class="big-winners-wall">
+                <h4><i class="fas fa-crown neon-icon-pink"></i> Tambayan Betting Kings & Queens!</h4>
+                <div class="winner-card">
+                    <img src="images/winner_silhouette.png" alt="Winner">
+                    <p><strong>Paps McSwabe</strong><br>Nanalo ng 1M Chichirya Points sa Lakers Championship '23!</p>
+                </div>
+                 <div class="winner-card">
+                    <img src="images/winner_silhouette.png" alt="Winner">
+                    <p><strong>Bossing Bets</strong><br>Nahulaan ang exact score ng Game 7 Finals '24!</p>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+    <!-- Bet Slip Modal (Hidden by default) -->
+    <div id="betSlipModal" class="modal-bet">
+        <div class="modal-bet-content">
+            <span class="close-bet-modal" onclick="closeBetSlipModal()">×</span>
+            <h4><i class="fas fa-file-invoice-dollar"></i> Iyong Bet Slip, Ka-Tambay!</h4>
+            <div id="selectedBetInfo">
+                <p><strong>Bet:</strong> <span id="betDescModal">--</span></p>
+                <p><strong>Odds:</strong> <span id="betOddsModal">--</span></p>
+            </div>
+            <label for="betAmount">Taya (Min 10 Chichirya Points):</label>
+            <input type="number" id="betAmount" min="10" value="50" step="10">
+            <p>Potential Win: <strong id="potentialWinDisplay">--</strong> Chichirya Points!</p>
+            <button class="neon-button" id="confirmBetBtn">Kumpirmahin ang Taya!</button>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Jhoven's Tambayan - Tumaya ng Tama, Para Laging Masaya! <i class="fas fa-dice-five"></i><i class="fas fa-money-bill-wave"></i></p>
+        </div>
+    </footer>
+    <script src="js/global_scripts.js"></script>
+    <script src="js/pustahan_scripts.js"></script>
+</body>
+</html>

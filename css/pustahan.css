@@ -1,0 +1,395 @@
+/* --- Pustahan Page - Neon Betting Den Styles --- */
+.pustahan-central-container {
+    /* .page-content styles from global.css apply */
+}
+
+.pustahan-header {
+    text-align: center;
+    margin-bottom: 35px;
+    padding: 20px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('../images/casino_felt_dark.jpg'); /* Dark felt/casino bg */
+    background-size: cover;
+    border-radius: 10px;
+    border: 2px solid #f0ff00; /* Neon Yellow border */
+    box-shadow: 0 0 20px #f0ff00;
+}
+.neon-sign-text-pustahan { /* Different animation for this page's main title */
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2.8em;
+    color: #fff;
+    text-align: center;
+    animation: neon-sign-pustahan-flicker 1.5s infinite alternate;
+    letter-spacing: 3px;
+    padding: 10px 0;
+    margin-bottom: 5px;
+}
+.neon-sign-text-pustahan span {
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #ff007f, /* Hot Pink glow */
+        0 0 82px #ff007f,
+        0 0 92px #ff007f,
+        0 0 102px #ff007f,
+        0 0 151px #ff007f;
+}
+.neon-sign-text-pustahan i { font-size: 0.8em; vertical-align: middle; }
+
+@keyframes neon-sign-pustahan-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.pustahan-header .tagline {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.15em;
+    color: #00f2ea;
+    text-shadow: 0 0 3px #00f2ea;
+    margin: 0 0 15px 0;
+}
+.entertainment-warning {
+    font-size: 0.9em;
+    color: #ffc107; /* Amber/Warning Yellow */
+    background-color: rgba(50,50,50,0.5);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px dashed #ffc107;
+}
+.entertainment-warning i { margin: 0 5px; }
+
+.betting-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: rgba(20,20,20,0.85); /* Slightly transparent section BG */
+    border-radius: 10px;
+    border: 1px solid #444;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.section-title-neon {
+    /* color: #00f2ea; Global H3 */
+    text-align: center;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00f2ea;
+    text-shadow: 0 0 5px #00f2ea, 0 0 10px #00f2ea, 0 0 3px #fff;
+}
+.section-title-neon.pink-neon {
+    color: #ff007f;
+    border-bottom-color: #ff007f;
+    text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 3px #fff;
+}
+.section-title-neon i { margin: 0 10px; }
+
+.betting-board {
+    background-color: #111; /* Very dark for individual boards */
+    border: 1px solid #282828;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.6);
+}
+.crazy-props-board {
+    border-left: 4px solid #ff007f; /* Pink accent for crazy props */
+}
+
+.game-matchup {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #444;
+}
+.team-info-bet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    color: #e0e0e0;
+    flex: 1;
+}
+.team-logo-pustahan {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 5px;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+}
+.vs-indicator-bet {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.8em;
+    color: #ff007f;
+    text-shadow: 0 0 5px #ff007f;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.game-datetime-bet {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6em;
+    color: #aaa;
+    margin-top: 3px;
+}
+
+.bet-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.bet-type-block {
+    background-color: #1a1a1a;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #333;
+}
+.bet-type-block h4 {
+    /* color: #f0ff00; Global H4 */
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid #f0ff00;
+    padding-bottom: 5px;
+}
+.bet-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 8px !important; /* Override global button margin */
+    padding: 8px 12px !important; /* Override global button padding */
+    font-size: 0.9em !important;
+    background-color: rgba(0, 242, 234, 0.05); /* Lighter for options */
+    border-color: #008b8b; /* Darker Cyan border */
+    box-shadow: none;
+}
+.bet-option:hover {
+    background-color: #00f2ea;
+    color: #121212;
+    border-color: #00f2ea;
+    box-shadow: 0 0 8px #00f2ea;
+}
+.bet-option .odds {
+    float: right;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: normal;
+    color: #f0ff00;
+    font-size: 0.9em;
+}
+
+.player-props-section {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px dashed #444;
+}
+.player-props-section h5 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00f2ea;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+.player-props-section .bet-option.prop-bet {
+    background-color: rgba(255, 0, 127, 0.05);
+    border-color: #800040; /* Darker Pink */
+    color: #ff007f;
+}
+.player-props-section .bet-option.prop-bet:hover {
+    background-color: #ff007f;
+    border-color: #ff007f;
+    color: #121212;
+    box-shadow: 0 0 8px #ff007f;
+}
+
+.bet-type-block.single-prop { /* For crazy props layout */
+    text-align: center;
+}
+.bet-type-block.single-prop h4 {
+    font-size: 1em;
+    color: #f0ff00;
+    border-bottom: none;
+    margin-bottom: 8px;
+}
+.bet-type-block.single-prop .bet-option {
+    display: inline-block;
+    width: auto;
+    margin: 5px !important;
+    text-align: center;
+}
+
+
+.pustahan-sidebar-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+.current-bets-widget, .how-to-bet-widget {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+.current-bets-widget h4, .how-to-bet-widget h4 { margin-top: 0; }
+#currentBetsList, .how-to-bet-widget ol {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9em;
+    color: #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+}
+#currentBetsList li, .how-to-bet-widget ol li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #383838;
+}
+#currentBetsList li:last-child, .how-to-bet-widget ol li:last-child { border-bottom: none; }
+#currentBetsList .no-bets { font-style: italic; text-align: center; padding: 10px;}
+.how-to-bet-widget ol li i { margin-right: 8px; color: #f0ff00; }
+
+.big-winners-wall {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.2);
+    border-top: 2px solid #f0ff00;
+}
+.big-winners-wall h4 {
+    color: #f0ff00;
+    /* text-shadow from global */
+}
+.winner-card {
+    display: inline-block;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px;
+    width: 200px;
+    vertical-align: top;
+    border: 1px solid #f0ff00;
+    box-shadow: 0 0 10px #f0ff00;
+}
+.winner-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #555;
+    margin-bottom: 8px;
+    border: 2px solid #f0ff00;
+}
+.winner-card p {
+    font-size: 0.85em;
+    color: #ccc;
+    margin: 0;
+}
+.winner-card strong { color: #f0ff00; }
+
+/* Bet Slip Modal */
+.modal-bet {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.88);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+.modal-bet-content {
+    background: linear-gradient(135deg, #1a1a1a, #282828);
+    margin: auto;
+    padding: 25px;
+    border: 2px solid #00f2ea;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px #00f2ea, 0 0 40px rgba(0, 242, 234, 0.3);
+    position: relative;
+    color: #e0e0e0;
+}
+.modal-bet-content h4 {
+    color: #00f2ea;
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.5em;
+}
+.modal-bet-content h4 i { margin-right: 10px; }
+.close-bet-modal {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+.close-bet-modal:hover, .close-bet-modal:focus {
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+#selectedBetInfo p {
+    font-size: 1.05em;
+    margin: 8px 0;
+}
+#selectedBetInfo strong { color: #00f2ea; }
+.modal-bet-content label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ccc;
+}
+.modal-bet-content input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #111;
+    border: 1px solid #00f2ea;
+    color: #f0ff00;
+    border-radius: 4px;
+    font-size: 1.2em;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+}
+.modal-bet-content input[type="number"]:focus {
+    box-shadow: 0 0 8px #00f2ea;
+}
+.modal-bet-content #potentialWinDisplay {
+    color: #39ff14; /* Neon Green for potential win */
+    font-weight: bold;
+    text-shadow: 0 0 3px #39ff14;
+}
+#confirmBetBtn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px !important; /* Ensure padding */
+    font-size: 1.1em !important;
+}
+
+
+/* Pustahan Page Specific Responsive */
+@media (max-width: 768px) {
+    .neon-sign-text-pustahan { font-size: 2em; }
+    .pustahan-header .tagline { font-size: 1em; }
+    .betting-board { padding: 10px; }
+    .game-matchup { flex-direction: column; gap: 8px; }
+    .team-info-bet { font-size: 1em; }
+    .team-logo-pustahan { width: 40px; height: 40px; }
+    .vs-indicator-bet { font-size: 1.5em; }
+    .bet-options-grid { grid-template-columns: 1fr; } /* Stack bet types */
+    .pustahan-sidebar-info { grid-template-columns: 1fr; }
+}

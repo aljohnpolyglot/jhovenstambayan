@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhoven's Tambayan - NBA Action Central!</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo_tambayan.png" alt="Jhoven's Tambayan Logo">
+                <h1>Jhoven's Tambayan</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#nba-stream-section"><i class="fas fa-basketball-ball"></i> NBA Live!</a></li>
+                    <li><a href="iskedyul.html"><i class="fas fa-calendar-alt"></i> Iskedyul</a></li>
+                    <li><a href="bilyaran.html"><i class="fas fa-gamepad-alt"></i> Bilyaran</a></li>
+                    <li><a href="videokehan.html"><i class="fas fa-microphone-alt"></i> Videokehan</a></li>
+                    <li><a href="pagkain.html"><i class="fas fa-utensils"></i> Pagkain</a></li>
+                    <li><a href="pustahan.html"><i class="fas fa-dice"></i> Pustahan!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="welcome-marquee-container">
+        <div class="welcome-marquee">
+            <span>WELCOME MGA KA-TAMBAY! <i class="fas fa-basketball-ball"></i> ENJOY THE GAME! <i class="fas fa-beer"></i> LIBRE MANG-ASAR PERO BAWAL PIKON! <i class="fas fa-fist-raised"></i> JHOVEN'S TAMBAYAN ROCKS!</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <section id="nba-stream-section" class="main-content">
+            <h2><i class="fas fa-tv"></i> Salang Na! NBA Action Dito sa Jumbotron!</h2>
+            <div class="jumbotron-stream-container">
+                <div class="jumbotron-frame">
+                    <div class="stream-player-container">
+                        <!-- VK Video Embed from aanba.ru -->
+                        <iframe src="https://vkvideo.ru/video_ext.php?oid=-55574239&id=456420838&hash=4436b033fc1eca49" width="100%" height="100%" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" title="NBA Stream"></iframe>
+                    </div>
+                    <div class="jumbotron-scoreboard">
+                        <div class="team-score home-score">TAMBAYAN ALL-STARS: <span id="homeScore">78</span></div>
+                        <div class="game-clock" id="gameClockDisplay">4Q 02:30</div>
+                        <div class="team-score guest-score">MGA BISITA: <span id="guestScore">75</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="live-commentary-bubble">
+                <p class="commentator-name">DJ Jhoven Says:</p>
+                <p id="djJhovenCommentary">"GRABE ANG LABAN! PUSO MGA KA-TAMBAYAN! SINO MANANALO DITO?!"</p>
+            </div>
+            
+            <div class="channel-surfing-buttons">
+                <button class="channel-btn" onclick="alert('Channel 1: Main Game! Eto na yun, paps! Dito ang tunay na aksyon!')"><i class="fas fa-satellite-dish"></i> CH 1 (Main)</button>
+                <button class="channel-btn" onclick="alert('Channel 2: Wala tayong budget para sa extra angle, LOL! Focus sa main game! -Jhoven')"><i class="fas fa-tv-alt"></i> CH 2 (Alt Angle)</button>
+                <button class="channel-btn" onclick="alert('Channel 3: Replays? Mamaya na pag tapos ang live, or check mo sa YouTube! Wag apurado!')"><i class="fas fa-history"></i> CH 3 (Replays)</button>
+            </div>
+
+            <p class="disclaimer"><i>(Paalala: Ang video stream ay sample. Para sa aktuwal na panonood, gamitin ang mga opisyal na NBA streaming services.)</i></p>
+
+            <div class="highlights-section">
+                <h3><i class="fas fa-bolt"></i> Mga Astig na Nakaraang Laro (Past Game Highlights):</h3>
+                <div class="highlight-video">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/videoseries?list=PLl_P3n2x37qP4n9jB8445nU_l0T31y-4A" title="NBA Highlights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p><a href="https://www.youtube.com/results?search_query=nba+highlights" target="_blank" class="neon-link">Manood pa ng Highlights sa YouTube! <i class="fab fa-youtube"></i></a></p>
+                </div>
+            </div>
+
+<!-- JHoven's Corner - Mga Eksena sa Tambayan! -->
+            <section class="jhovens-corner-section">
+                <h3><i class="fas fa-user-astronaut neon-icon-pink"></i> Jhoven's Corner - Mga Eksena at Sikreto! <i class="fas fa-camera-retro neon-icon-pink"></i></h3>
+                <div class="jhovens-corner-grid">
+                    
+                    <div class="corner-item video-item">
+                        <h4><i class="fas fa-bolt"></i> Si Jhoven, Nag-Transform!</h4>
+                        <video width="100%" controls poster="images/curry_mouthpiece.jpg"> <!-- Optional: use a placeholder image for poster -->
+                            <source src="images/jhoven_turning_into_ironman.mp4" type="video/mp4">
+                            Sorry, Paps, 'di ma-play ang video. Update mo browser mo!
+                        </video>
+                        <p class="caption">Ironman ng Tambayan, nagpakitang-gilas!</p>
+                    </div>
+
+                    <div class="corner-item image-item">
+                        <h4><i class="fas fa-file-invoice neon-icon-yellow"></i> NBA 2025 Playoff Script?!</h4>
+                        <div class="image-frame leaked-script">
+                            <img src="images/nba_2025_playoffs_script_leaked.jpg" alt="Leaked NBA Playoff Script">
+                            <span class="top-secret-stamp">TOP SECRET - EYES ONLY NI JHOVEN!</span>
+                        </div>
+                        <p class="caption">CONFIDENTIAL: Nasingit ni Jhoven! Wag ipagkalat, ha?!</p>
+                    </div>
+
+                    <div class="corner-item image-item">
+                        <h4><i class="fas fa-project-diagram neon-icon-cyan"></i> Bracket ni Boss Jhoven!</h4>
+                        <div class="image-frame">
+                            <img src="images/jhovens_bracket_2025_playoffs.jpg" alt="Jhoven's Playoff Bracket">
+                        </div>
+                        <p class="caption">Sino kaya ang tatama sa prediksyon? Tayaan na 'to!</p>
+                    </div>
+                    
+                    <div class="corner-item image-item">
+                        <h4><i class="fas fa-bed neon-icon-blue"></i> Pagod na si Boss...</h4>
+                         <div class="image-frame">
+                            <img src="images/jhoven_about_to_sleep.jpg" alt="Jhoven About to Sleep">
+                        </div>
+                        <p class="caption">Kaka-analyze ng laro! Tulog muna para may energy bukas!</p>
+                    </div>
+
+                    <div class="corner-item image-item special-collectible">
+                        <h4><i class="fas fa-trophy neon-icon-gold"></i> RARE ITEM!</h4>
+                        <div class="image-frame display-case">
+                             <img src="images/curry_mouthpiece.jpg" alt="Curry's Mouthpiece">
+                        </div>
+                        <p class="caption">Mouthpiece ni Steph Curry, nahablot ni Jhoven! (For display only... baka?) <i class="fas fa-grin-stars"></i></p>
+                    </div>
+
+                </div>
+            </section>
+            <!-- End of Jhoven's Corner -->
+
+
+
+
+        </section>
+
+        <aside class="sidebar">
+            <div class="chatbox-widget">
+                <h4><i class="fas fa-comments"></i> Usapan ng Barkada!</h4>
+                <div id="chatMessagesContainer" class="chat-messages">
+                    <div class="chat-message"><span class="user"><i class="fas fa-basketball-ball neon-icon"></i> PapsJhoven:</span> GSW mananalo mamaya! <i class="fas fa-fire"></i></div>
+                    <div class="chat-message"><span class="user"><i class="fas fa-crown neon-icon-alt"></i> ChixNiJhoven:</span> Lakers kaya! <i class="fas fa-heartbeat"></i></div>
+                    <div class="chat-message"><span class="user"><i class="fas fa-beer neon-icon"></i> Tambay1:</span> Order tayo sisig! Gutom na!</div>
+                    <div class="chat-message"><span class="user"><i class="fas fa-user-secret neon-icon-alt"></i> BarangayCaptain:</span> Ingay niyo! Matutulog na ako!</div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" placeholder="Type mo dito, pre...">
+                    <button class="neon-button" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+                    <button class="neon-button-alt" id="shoutOutBtn" onclick="shoutOutMessage()"><i class="fas fa-bullhorn"></i></button>
+                </div>
+            </div>
+
+            <div id="pustahan-corner" class="pustahan-widget">
+                <h4><i class="fas fa-dice-d6 neon-icon-alt"></i> Pustahan sa Tambayan! <i class="fas fa-dice-d6 neon-icon-alt"></i></h4>
+                <div class="bet-item">
+                    <p><strong>LALABAS NGAYON:</strong> Knicks vs Celtics</p>
+                    <p class="odds-display">Knicks (Odds: KAYA YAN!) - Celtics (Odds: PUSO LANG!)</p>
+                    <button class="bet-button neon-button-alt" onclick="placeBet('Knicks')">Taya sa Knicks!</button>
+                    <button class="bet-button neon-button-alt" onclick="placeBet('Celtics')">Taya sa Celtics!</button>
+                </div>
+                <div class="bet-item">
+                    <p><strong>PUNTOS NI JALEN BRUNSON:</strong> Over/Under 30.5</p>
+                    <p class="odds-display">Over (Odds: EASY MONEY!) - Under (Odds: BAKA NAMAN?)</p>
+                    <button class="bet-button neon-button-alt" onclick="placeBet('Brunson Over 30.5')">Over!</button>
+                    <button class="bet-button neon-button-alt" onclick="placeBet('Brunson Under 30.5')">Under!</button>
+                </div>
+                <div class="last-call-bets">LAST CALL FOR BETS! <i class="fas fa-stopwatch"></i></div>
+                <p class="disclaimer-bet"><i>(For entertainment purposes only. Ang matalo, manglilibre ng chichirya! LOL!)</i></p>
+            </div>
+
+            <div class="featured-pulutan-widget">
+                <h4><i class="fas fa-utensils neon-icon"></i> Tikman Mo 'To!</h4>
+                <img src="images/sisig_featured.jpg" alt="Sizzling Sisig">
+                <p><strong>Sizzling Sisig ni Aling Jhovenita!</strong><br>Perfect pang-NBA marathon!</p>
+                <a href="pagkain.html" class="neon-button">Order Na!</a>
+            </div>
+
+            <div class="quick-links">
+                <h4><i class="fas fa-bolt neon-icon-alt"></i> Ano Pa Meron?</h4>
+                <ul>
+                    <li><a href="bilyaran.html" class="quick-link-btn"><i class="fas fa-gamepad-alt"></i> Tara, Bilyar!</a></li>
+                    <li><a href="videokehan.html" class="quick-link-btn"><i class="fas fa-microphone-alt"></i> Kanta Mode!</a></li>
+                    <li><a href="pagkain.html" class="quick-link-btn"><i class="fas fa-utensils"></i> Chibugan Na!</a></li>
+                    <li><a href="#" class="quick-link-btn" onclick="showTambayRules(event)"><i class="fas fa-scroll"></i> Rules ng Tambayan</a></li>
+                </ul>
+            </div>
+
+            <div id="tambayRules" class="tambay-rules-sign" style="display:none;">
+                <h4><i class="fas fa-exclamation-triangle"></i> House Rules ni Jhoven!</h4>
+                <ol>
+                    <li>Bawal Pikon, Chill Lang Tayo.</li>
+                    <li>Order ng Pulutan, Wag Mahiya.</li>
+                    <li>Cheer Your Team, Respeto sa Iba.</li>
+                    <li>Si Jhoven ang Boss Dito. Period. LOL!</li>
+                </ol>
+                 <button class="neon-button-alt" onclick="document.getElementById('tambayRules').style.display='none';" style="margin-top:10px;">Close</button>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Jhoven's Tambayan - Dito Masaya Palagi, Pramis! <i class="fas fa-basketball-ball"></i><i class="fas fa-glass-cheers"></i> #TambayAllNight #NBAatJhoven</p>
+            <div class="social-links">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+   <!-- ... (rest of your footer) ... -->
+    </footer>
+
+    <script src="js/global_scripts.js"></script>
+    <script>
+        // --- Conceptual JS for Index Page Fun ---
+        document.addEventListener('DOMContentLoaded', () => { // Ensure DOM is loaded before running scripts
+
+            // Chatbox Functionality (Simple Simulation)
+            const chatMessagesContainer = document.getElementById('chatMessagesContainer');
+            const chatInput = document.getElementById('chatInput');
+            const sendChatButton = document.querySelector('.chat-input-area .neon-button'); // Target the first button (Send)
+            const shoutOutButton = document.getElementById('shoutOutBtn');
+
+            // --- Pareng AI Setup ---
+            const parengAiResponses = {
+                lebron: [
+                    "The GOAT! Sabi ko sa inyo eh! 🐐",
+                    "King James taking over! Walang makakapigil!",
+                    "LeBron with the chase-down block! Classic! Pang-poster yan!",
+                    "Ayos ang assist ni LeBron! Parang may mata sa likod!"
+                ],
+                curry: [
+                    "BANG! Steph Curry from downtown! Three-la-la-land! 🔥",
+                    "Chef Curry cooking them ankles! Grabe ang handles!",
+                    "Night night! Sabi ni Steph. Tulog na kalaban!",
+                    "Wala talagang kupas si Wardell Stephen Curry II!"
+                ],
+                sisig: [
+                    "Uy, sisig! Order na kayo, pahingi ako kahit amoy lang! Virtual lang, sige na!",
+                    "Sisig + malamig na beer = Perfect NBA night! Tara!",
+                    "Nag-crave tuloy ako ng sisig dahil sa inyo! Padala naman dyan!",
+                    "Sizzling Sisig for the win! Parang clutch shot sa buzzer!"
+                ],
+                pustahan: [
+                    "May taya na ba kayo mga Paps? Check niyo Pustahan Central!",
+                    "Sino kaya mananalo sa pustahan natin? May odds na si Boss Jhoven!",
+                    "Pusta na habang maaga! Baka maunahan pa kayo sa chichirya!",
+                    "Good luck sa mga taya niyo! Wag kalimutan, for fun lang ha!"
+                ],
+                general_nba: [
+                    "Ganda ng laban ngayon! Intense!",
+                    "Ano sa tingin niyo, sino MVP candidate this season?",
+                    "May trade rumors ba kayong narinig? Share niyo naman!",
+                    "Sana manalo team ko mamaya! 🙏"
+                ],
+                random_tambay: [
+                    "Ang ingay dito sa Tambayan! Parang finals na sa Araneta!",
+                    "Jhoven, pa-order ng extra rice! Kulang ang isa!",
+                    "Connection check... okay pa ba stream natin mga Paps? Wag naman mag-buffering!",
+                    "May videoke ba mamaya after ng game? Kakanta ako ng 'My Way'!",
+                    "Ang init! Pahangin naman dyan, Boss Jhoven!",
+                    "Sino nanonood mag-isa? Sama ka dito sa usapan!"
+                ]
+            };
+
+            function parengAiSpeaks(category, customMessage = null) {
+                if (!chatMessagesContainer) return;
+
+                let aiMessageText = "";
+                if (customMessage) {
+                    aiMessageText = customMessage;
+                } else if (parengAiResponses[category] && parengAiResponses[category].length > 0) {
+                    aiMessageText = parengAiResponses[category][Math.floor(Math.random() * parengAiResponses[category].length)];
+                } else {
+                    return; // No message to speak
+                }
+
+                const aiMessageDiv = document.createElement('div');
+                aiMessageDiv.classList.add('chat-message', 'ai-message');
+                aiMessageDiv.innerHTML = `<span class="user"><i class="fas fa-robot neon-icon-cyan"></i> Pareng AI:</span> ${aiMessageText}`;
+                
+                chatMessagesContainer.appendChild(aiMessageDiv);
+                chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+            }
+
+            function analyzeUserMessageForAi(userMessage) {
+                const lowerMessage = userMessage.toLowerCase();
+                let responded = false; // Flag to ensure only one AI category responds per user message for simplicity
+
+                if (lowerMessage.includes("lebron") || lowerMessage.includes("king james")) {
+                    setTimeout(() => parengAiSpeaks('lebron'), 800);
+                    responded = true;
+                } else if (lowerMessage.includes("curry") || lowerMessage.includes("steph")) {
+                    setTimeout(() => parengAiSpeaks('curry'), 800);
+                    responded = true;
+                }
+                
+                if (!responded && (lowerMessage.includes("sisig") || lowerMessage.includes("pagkain") || lowerMessage.includes("gutom") || lowerMessage.includes("order"))) {
+                    setTimeout(() => parengAiSpeaks('sisig'), 800);
+                    responded = true;
+                }
+                
+                if (!responded && (lowerMessage.includes("pusta") || lowerMessage.includes("taya") || lowerMessage.includes("odds"))) {
+                    setTimeout(() => parengAiSpeaks('pustahan'), 800);
+                    responded = true;
+                }
+                
+                if (!responded && (lowerMessage.includes("nba") || lowerMessage.includes("game") || lowerMessage.includes("laro") || lowerMessage.includes("team"))) {
+                    if(Math.random() < 0.5) { // 50% chance to talk about general NBA
+                         setTimeout(() => parengAiSpeaks('general_nba'), 800);
+                    }
+                    responded = true; // Consider it handled even if it doesn't speak due to probability
+                }
+
+                // If no specific keywords, sometimes Pareng AI just butts in with a random tambay thought
+                if (!responded && Math.random() < 0.15) { // 15% chance for a random thought if nothing else matched
+                     setTimeout(() => parengAiSpeaks('random_tambay'), 1200);
+                }
+            }
+            
+            // Regular Chat Message Function
+            function sendChatMessage() {
+                const messageText = chatInput.value.trim();
+                if (messageText !== "") {
+                    const newMessageDiv = document.createElement('div');
+                    newMessageDiv.classList.add('chat-message');
+                    
+                    const userIconHTML = Math.random() > 0.5 ? '<i class="fas fa-basketball-ball neon-icon"></i>' : '<i class="fas fa-gamepad neon-icon-alt"></i>';
+                    const userNameText = Math.random() > 0.5 ? 'Ka-Tambay101:' : 'BallerBoi:';
+
+                    newMessageDiv.innerHTML = `<span class="user">${userIconHTML} ${userNameText}</span> ${messageText}`;
+                    
+                    if (chatMessagesContainer) {
+                        chatMessagesContainer.appendChild(newMessageDiv);
+                        chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+                    }
+                    analyzeUserMessageForAi(messageText); // Let Pareng AI analyze the message
+                    chatInput.value = "";
+                }
+            }
+            // Attach to Send button
+            if (sendChatButton) {
+                sendChatButton.addEventListener('click', sendChatMessage);
+            }
+            // Allow sending chat on Enter key in input field
+            if (chatInput) {
+                chatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault(); // Prevent default form submission if it's in a form
+                        sendChatMessage();
+                    }
+                });
+            }
+
+            // Shout Out Message Function
+            function shoutOutMessage() {
+                const messageText = chatInput.value.trim();
+                if (messageText !== "") {
+                    const newMessageDiv = document.createElement('div');
+                    newMessageDiv.classList.add('chat-message', 'shoutout');
+                    
+                    const userIconHTML = '<i class="fas fa-bullhorn neon-icon-alt"></i>';
+                    const userNameText = 'SHOUTOUT NI JHOKER:';
+
+                    newMessageDiv.innerHTML = `<span class="user">${userIconHTML} ${userNameText}</span> ${messageText.toUpperCase()}`;
+                    
+                    if (chatMessagesContainer) {
+                        chatMessagesContainer.appendChild(newMessageDiv);
+                        chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+                    }
+                    // Optional: alert for shoutout, or rely on visual distinction
+                    // alert(`SHOUT OUT!!! "${messageText.toUpperCase()}" \n(Ayan, mas kitang-kita na! LOL!)`);
+                    chatInput.value = ""; // Clear input after shoutout
+                } else {
+                    alert("Type ka muna ng ishi-shout out, bossing!");
+                }
+            }
+            // Attach to Shout Out button
+            if (shoutOutButton) {
+                shoutOutButton.addEventListener('click', shoutOutMessage);
+            }
+
+
+            // Pustahan Corner (Conceptual - for buttons on index.html)
+            function placeBet(betChoice) { 
+                const betConfirmations = [
+                    `Taya mo: ${betChoice}\nGood luck, Paps! For fun lang 'to. Ang matalo, sagot ang chichirya! 😉`,
+                    `Sure ka na ba sa ${betChoice}? Sige, go for the gold (chichirya)!`,
+                    `${betChoice} ang bet mo! Sana manalo ka para may pang-videoke tayo!`,
+                    `Okay, ${betChoice} locked in! May the odds be ever in your favor (sa chichirya world)!`
+                ];
+                alert(betConfirmations[Math.floor(Math.random() * betConfirmations.length)]);
+            }
+            // Expose to global scope for inline onclick
+            window.placeBet = placeBet;
+            
+
+            // Tambayan Rules Toggle
+            const rulesSign = document.getElementById('tambayRules');
+            function showTambayRules(event) {
+                if(event) event.preventDefault();
+                if (rulesSign) {
+                    const isHidden = rulesSign.style.display === "none" || rulesSign.style.display === "";
+                    rulesSign.style.display = isHidden ? "block" : "none";
+                    if (isHidden) {
+                        rulesSign.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }
+            }
+            window.showTambayRules = showTambayRules; // Expose globally
+
+            const closeRulesButton = rulesSign ? rulesSign.querySelector('.neon-button-alt') : null;
+            if (closeRulesButton) {
+                closeRulesButton.addEventListener('click', () => {
+                    if (rulesSign) rulesSign.style.display = 'none';
+                });
+            }
+
+            // Conceptual Scoreboard and Commentary Update
+            const djComments = [
+                "GRABE ANG LABAN! PUSO MGA KA-TAMBAYAN!", "ANO NANGYARI DUN?! REPLAY PLEASE!", "DEFENSE! DEFENSE! IPASOK SI JHOVEN!", "TIMEOUT MUNA! KAIN TAYO SISIG!", "MAY TATAWAGAN PA BA SI COACH?!", "LAST TWO MINUTES! KAPIT LANG MGA BRO!", "SLAM DUNK YAN! PANG POSTER!", "ANG INIT NIYA NGAYON! PARANG KAPE NI JHOBEN!", "FOUL DAW?! REFEREE, BULAG KA BA?!", "BUZZER BEATER BA YAN?! TIGNAN NATIN!", "THREE POINTS! BANG! PARANG KIDLAT!", "ANG GANDA NG PASA! TEAMWORK MAKES THE DREAM WORK!", "NAGPAPAKITANG GILAS ANG ROOKIE!", "VETERAN MOVE YUN, MGA KA-TAMBAYAN!", "PARANG MAY SCRIPT ANG LARO AH! JK LANG MGA BOSS!"
+            ];
+            const gameClocks = ["4Q 02:17", "4Q 01:03", "4Q 00:33 (CLUTCH!)", "OT 03:48", "3Q 05:22", "2Q HALFTIME!", "BREAK MUNA, KAIN TAYO!", "1Q PA LANG, INTENSE NA!"];
+            const homeScoreEl = document.getElementById('homeScore');
+            const guestScoreEl = document.getElementById('guestScore');
+            const djCommentaryEl = document.getElementById('djJhovenCommentary');
+            const gameClockDisplayEl = document.getElementById('gameClockDisplay');
+
+            function updateGameStatus() {
+                if (homeScoreEl && guestScoreEl) {
+                    homeScoreEl.innerText = Math.floor(Math.random() * 30) + 70;
+                    guestScoreEl.innerText = Math.floor(Math.random() * 30) + 70;
+                }
+                if(djCommentaryEl){
+                     djCommentaryEl.innerText = djComments[Math.floor(Math.random() * djComments.length)];
+                }
+                if(gameClockDisplayEl){
+                    gameClockDisplayEl.innerText = gameClocks[Math.floor(Math.random() * gameClocks.length)];
+                }
+            }
+            setInterval(updateGameStatus, 12000); // Update every 12 seconds
+            updateGameStatus(); // Initial call
+
+            // Random AI interjections
+            setInterval(() => {
+                if (chatMessagesContainer && Math.random() < 0.25) { // 25% chance every 18 seconds
+                    parengAiSpeaks('random_tambay');
+                }
+            }, 18000);
+
+
+            // Jhoven's Corner Interactivity
+            const leakedScriptImage = document.querySelector('.leaked-script img');
+            if (leakedScriptImage) {
+                leakedScriptImage.addEventListener('click', () => {
+                    const secretMessages = [
+                        "HOY! Bawal i-zoom 'yan, sikreto ni Jhoven 'yan! Highly Confidential, Paps! LOL!",
+                        "Nakita mo ba? Wag mo sabihin kay Adam Silver ha!",
+                        "Ang script ay... MANANALO ANG PUSO! (At kung sino man taya ni Jhoven!)",
+                        "TOP SECRET! Baka ma-ban tayo ni Commissioner Jhoven dito!"
+                    ];
+                    alert(secretMessages[Math.floor(Math.random() * secretMessages.length)]);
+                });
+            }
+
+            const curryMouthpieceFrame = document.querySelector('.special-collectible .image-frame');
+            if (curryMouthpieceFrame) {
+                curryMouthpieceFrame.addEventListener('mouseenter', () => {
+                    // This could be a tooltip instead of an alert for less intrusion
+                    // For now, just console log to show it's working
+                    console.log("Hovered on Curry's Mouthpiece! (Conceptual PM Jhoven)");
+                });
+            }
+             // Video play on click - For Jhoven's Ironman video
+            const ironmanVideo = document.querySelector('.video-item video');
+            if(ironmanVideo){
+                // Most browsers will show controls by default, this is more if you wanted custom play button
+                // ironmanVideo.addEventListener('click', () => {
+                //     if(ironmanVideo.paused){
+                //         ironmanVideo.play();
+                //     } else {
+                //         ironmanVideo.pause();
+                //     }
+                // });
+                 ironmanVideo.addEventListener('ended', () => {
+                    if(chatMessagesContainer) parengAiSpeaks(null, "Astig ng transformation ni Boss Jhoven! Parang NBA player na nag-superhero!");
+                });
+            }
+
+        }); // End of DOMContentLoaded
+    </script>
+</body>
+</html>

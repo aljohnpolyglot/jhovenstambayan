@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cue Masters' Corner - Jhoven's Tambayan</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/bilyaran.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo_tambayan.png" alt="Jhoven's Tambayan Logo">
+                <h1>Jhoven's Tambayan</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#nba-stream-section"><i class="fas fa-basketball-ball"></i> NBA Live!</a></li>
+                    <li><a href="iskedyul.html"><i class="fas fa-calendar-alt"></i> Iskedyul</a></li>
+                    <li><a href="bilyaran.html" class="active"><i class="fas fa-gamepad-alt"></i> Bilyaran</a></li>
+                    <li><a href="videokehan.html"><i class="fas fa-microphone-alt"></i> Videokehan</a></li>
+                    <li><a href="pagkain.html"><i class="fas fa-utensils"></i> Pagkain</a></li>
+                    <li><a href="pustahan.html"><i class="fas fa-dice"></i> Pustahan!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-content">
+        <section class="billiards-section">
+            <div class="billiards-header">
+                <h2 class="neon-sign-text"><span><i class="fas fa-bowling-ball"></i> Jhoven's 8-Ball Heaven <i class="fas fa-crosshairs"></i></span></h2>
+                <p class="tagline">"Tira Mo Na, Baka Maunahan Ka Pa sa Chichirya!"</p>
+            </div>
+            
+            <div class="billiards-main-area">
+                <div class="game-table-zone">
+                    <div class="table-status-light">
+                        <span id="tableStatusIndicator">TABLE IS OPEN!</span>
+                    </div>
+                    <div class="game-embed-container billiards-game-container">
+                        <iframe
+                            id='item-direct-container'
+                            class='item-direct-container resizable'
+                            width='100%' /* Adjusted for responsiveness */
+                            height='500' /* Adjusted height */
+                            allow='autoplay'
+                            allowfullscreen
+                            frameBorder='0'
+                            scrolling='no'
+                            src='https://html5.gamedistribution.com/rvvASMiM/260b0fa8275c4f51a995340b6b791109/index.html?gd_sdk_referrer_url=https://y8.com/games/billiards'
+                            title="Billiards Game"
+                        ></iframe>
+                    </div>
+                    <div class="game-sound-effects">
+                        <button class="sfx-btn neon-button-alt" onclick="playSoundEffect('chalk')"><i class="fas fa-chalkboard-teacher"></i> Chalk Up!</button>
+                        <button class="sfx-btn neon-button-alt" onclick="playSoundEffect('break')"><i class="fas fa-bolt"></i> Break Shot!</button>
+                        <button class="sfx-btn neon-button-alt" onclick="playSoundEffect('pocket')"><i class="fas fa-dot-circle"></i> Ball Pocketed!</button>
+                    </div>
+                </div>
+
+                <div class="billiards-sidebar">
+                    <div class="leaderboard-widget">
+                        <h4><i class="fas fa-trophy neon-icon-yellow"></i> Top Tiradors Dito!</h4>
+                        <ol id="leaderboardList">
+                            <li><i class="fas fa-crown"></i> Jhoven 'The Shark' - Wins: 999+</li>
+                            <li><i class="fas fa-star"></i> ChixNiJhoven 'Lucky Shot' - Wins: 77</li>
+                            <li><i class="fas fa-medal"></i> TambayAEGIS 'Sure Ball' - Wins: 65</li>
+                            <li>Ikaw Na Susunod?</li>
+                        </ol>
+                        <button class="neon-button" id="iWonBtn">Nanalo Ako!</button>
+                    </div>
+
+                    <div class="billiards-lingo-widget">
+                        <h4><i class="fas fa-comments neon-icon-cyan"></i> Bilyar Lingo 101</h4>
+                        <ul>
+                            <li onclick="showLingo('Sablay: Missed shot, parang pag-asa mo sa kanya. LOL!')"><strong>Sablay</strong> - <span class="lingo-def">Missed shot</span></li>
+                            <li onclick="showLingo('Pasok Lahat: Cleared the table! Galing!')"><strong>Pasok Lahat</strong> - <span class="lingo-def">Cleared table</span></li>
+                            <li onclick="showLingo('Chamba Shot: Lucky shot! Swerte mo naman!')"><strong>Chamba Shot</strong> - <span class="lingo-def">Lucky shot</span></li>
+                            <li onclick="showLingo('Yabang Shot: Pang-mayabang na tira. Pag pumasok, astig!')"><strong>Yabang Shot</strong> - <span class="lingo-def">Show-off shot</span></li>
+                            <li onclick="showLingo('Lastiko: Cue ball na nagba-bounce ng marami. Parang bola ng basketball!')"><strong>Lastiko</strong> - <span class="lingo-def">Multiple C</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="billiards-tambay-rules">
+                <h3><i class="fas fa-scroll neon-icon-pink"></i> House Rules & Etiquette ni Jhoven</h3>
+                <ul>
+                    <li><i class="fas fa-hand-paper"></i> Bawal ang 'Masiao' (Distractions habang may titira).</li>
+                    <li><i class="fas fa-cookie-bite"></i> Talo, Taya sa Next Round ng Crispy Pata o Sisig.</li>
+                    <li><i class="far fa-sad-tear"></i> Walang Iyakan 'Pag Na-Scratch o natalo. Laro lang!</li>
+                    <li><i class="fas fa-handshake"></i> Respeto sa Tako, sa Mesa, at sa Kalaban.</li>
+                    <li><i class="fas fa-thumbs-up"></i> Huwag Kalimutan ang "Good Game!" pagkatapos.</li>
+                    <li><i class="fas fa-microphone-alt"></i> Pwedeng kumanta habang naghihintay ng tira (Videoke is Life!).</li>
+                </ul>
+            </div>
+             <div class="billiards-pustahan-link">
+                <h4><i class="fas fa-dice-d6 neon-icon-yellow"></i> Gusto Pumusta?</h4>
+                <p>May tiwala ka ba sa tira mo? <a href="pustahan.html" class="neon-link">Bisitahin ang Main Pustahan Corner ni Jhoven!</a> Baka yumaman ka (sa chichirya)!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Jhoven's Tambayan - Tira lang ng Tira, Bawal Sumuko! <i class="fas fa-bowling-ball"></i><i class="fas fa-beer"></i></p>
+        </div>
+    </footer>
+    <script src="js/global_scripts.js"></script>
+    <script src="js/bilyaran_scripts.js"></script>
+</body>
+</html>

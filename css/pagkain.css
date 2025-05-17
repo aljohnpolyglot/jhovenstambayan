@@ -1,0 +1,366 @@
+/* --- Pagkain Page - Neon Food Strip / Kainan After Dark --- */
+.food-menu-section {
+    /* .page-content styles from global.css apply */
+}
+
+.menu-header-banner {
+    text-align: center;
+    padding: 25px 15px;
+    background: linear-gradient(rgba(18,18,18,0.85), rgba(18,18,18,0.95)), url('../images/food_banner_bg_dark.jpg'); /* Darker food BG */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    border: 2px solid #ff007f;
+    box-shadow: 0 0 20px #ff007f, inset 0 0 15px rgba(255,0,127,0.2);
+}
+#todaysSpecialSign {
+    background-color: rgba(255, 0, 127, 0.8);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-bottom: 15px;
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px #ff007f;
+    animation: special-pulse 2s infinite;
+}
+#todaysSpecialSign span { font-weight: normal; }
+#todaysSpecialSign strong { color: #f0ff00; text-shadow: 0 0 3px #000; }
+
+@keyframes special-pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px #ff007f; }
+    50% { transform: scale(1.03); box-shadow: 0 0 20px #ff007f, 0 0 5px #fff; }
+    100% { transform: scale(1); box-shadow: 0 0 10px #ff007f; }
+}
+
+.menu-header-banner h2 {
+    font-size: 2.8em; /* Bigger H2 for this page */
+    color: #f0ff00;
+    text-shadow: 0 0 5px #f0ff00, 0 0 10px #f0ff00, 0 0 15px #000;
+    margin-bottom: 8px;
+}
+.menu-header-banner .tagline {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.25em;
+    color: #00f2ea;
+    text-shadow: 0 0 3px #00f2ea, 0 0 2px #000;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.menu-category {
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: rgba(26, 26, 26, 0.8); /* Darker, distinct section BG */
+    border: 1px solid #333; /* Subtler border */
+    border-left: 5px solid; /* Base for specific neon color */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+/* Specific neon accent colors for "stalls" */
+#pulutan-power { border-left-color: #ff007f; } /* Pink */
+#pulutan-power h3 .neon-icon-pink { color: #ff007f; }
+#pulutan-power h4 .neon-icon-yellow { color: #f0ff00; }
+#pulutan-power h4 .neon-icon-red { color: #ff4500; }
+
+#sabaw-station { border-left-color: #ff8c00; } /* Orange */
+#sabaw-station h3 .neon-icon-orange { color: #ff8c00; }
+
+#gulay-getaway { border-left-color: #39ff14; } /* Green */
+#gulay-getaway h3 .neon-icon-green { color: #39ff14; }
+
+#ulam-specials { border-left-color: #f0ff00; } /* Yellow */
+#ulam-specials h3 .neon-icon-yellow { color: #f0ff00; }
+#ulam-specials h4 .neon-icon-red { color: #ff4500; }
+#ulam-specials h4 .neon-icon-orange { color: #ff8c00; }
+
+#isda-best { border-left-color: #007bff; } /* Bright Blue */
+#isda-best h3 .neon-icon-blue { color: #007bff; }
+
+#kanin-station { border-left-color: #fff; } /* White */
+#kanin-station h3 .neon-icon-white { color: #fff; }
+
+#merienda-madness { border-left-color: #ff8c00; } /* Orange */
+#merienda-madness h3 .neon-icon-orange { color: #ff8c00; }
+
+#sweet-endings { border-left-color: #ff69b4; } /* Hot Pink */
+#sweet-endings h3 .neon-icon-pink { color: #ff69b4; }
+
+#thirst-quenchers { border-left-color: #00f2ea; } /* Cyan */
+#thirst-quenchers h3 .neon-icon-cyan { color: #00f2ea; }
+
+#barkada-deals { border-left-color: #f0ff00; } /* Yellow for deals */
+#barkada-deals h3 .neon-icon-yellow { color: #f0ff00; }
+
+
+.menu-category h3 {
+    border-bottom: 2px solid; /* Uses border-left-color via currentColor inheritance now */
+    border-bottom-color: inherit; /* Explicitly inherit border color for underline */
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+.menu-category h3 .category-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.5em;
+    color: #aaa;
+    margin-left: 10px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.menu-category h3 i {
+    margin-right: 15px;
+    font-size: 1em; /* Relative to h3 */
+    text-shadow: 0 0 8px currentColor;
+}
+
+.menu-category h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #e0e0e0;
+    margin-top: 30px;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #555; /* Subtler dash */
+    font-size: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.menu-category h4 i {
+    margin-right: 10px;
+    /* Icon color set individually or defaults to h4 color */
+}
+
+.neon-divider {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 242, 234, 0), #00f2ea, rgba(0, 242, 234, 0));
+    margin: 35px 0;
+    box-shadow: 0 0 5px #00f2ea;
+}
+
+.chichirya-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Adjusted min size */
+    gap: 18px;
+    margin-bottom: 25px;
+}
+.snack-item {
+    text-align: center;
+    background: #202020;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    border: 1px solid #444;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+.snack-item:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: #ff007f;
+    box-shadow: 0 4px 12px rgba(255, 0, 127, 0.25), 0 0 8px #ff007f;
+}
+.snack-item img {
+    width: 80px; /* Standardized size */
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 4px;
+}
+.snack-item p {
+    font-size: 0.85em;
+    font-weight: bold;
+    margin: 0;
+    color: #00f2ea;
+}
+
+.food-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px; /* Increased gap */
+}
+
+.food-item-card {
+    background-color: #222; /* Dark card background */
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #3b3b3b;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.25s, box-shadow 0.25s;
+    overflow: hidden; /* For clean image corners */
+}
+.food-item-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 242, 234, 0.25), 0 0 15px #00f2ea;
+    border-color: #00f2ea;
+}
+.food-item-card.chef-pick {
+    border-color: #f0ff00; /* Neon Yellow border for chef picks */
+    box-shadow: 0 0 15px #f0ff00, 0 0 25px rgba(240,255,0,0.3);
+}
+.food-item-card.chef-pick:hover {
+    box-shadow: 0 8px 25px #f0ff00, 0 0 35px rgba(240,255,0,0.5);
+}
+
+.food-item-card img {
+    width: 100%;
+    height: 200px; /* Consistent height */
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    border: 2px solid #444;
+}
+.food-item-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* Allow details to take up space */
+}
+.food-item-card h4 {
+    margin: 0 0 6px 0;
+    font-family: 'Orbitron', sans-serif; /* Different font for dish names */
+    font-size: 1.25em;
+    color: #00f2ea;
+    text-shadow: 0 0 4px #00f2ea;
+    line-height: 1.3;
+}
+.chef-pick-badge {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 0.6em;
+    color: #121212;
+    background-color: #f0ff00;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 8px;
+    vertical-align: middle;
+    text-shadow: none;
+    display: inline-block;
+}
+.food-item-card .price {
+    font-weight: bold;
+    color: #f0ff00;
+    font-size: 1.25em;
+    margin: 5px 0 12px 0;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 3px #000;
+}
+.food-item-card .description {
+    font-size: 0.8em;
+    color: #b0b0b0;
+    margin-bottom: 12px;
+    min-height: 35px; /* Reserve space */
+    line-height: 1.5;
+}
+.food-item-card .order-button {
+    padding: 8px 18px;
+    font-size: 0.9em;
+    margin-top: auto; /* Push button to bottom of card if card heights vary */
+}
+
+/* Barkada Deals */
+.deal-item {
+    background-color: rgba(240, 255, 0, 0.08); /* Faint yellow background for deals */
+    border: 2px dashed #f0ff00;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.deal-item h4 {
+    color: #f0ff00;
+    margin-top: 0;
+    font-size: 1.4em;
+    text-shadow: 0 0 5px #f0ff00;
+}
+.deal-item h4 i { color: #ff8c00; margin-right: 8px; }
+.deal-item p {
+    color: #ccc;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+.deal-item .save-badge {
+    background-color: #ff007f;
+    color: #fff;
+    font-size: 0.8em;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-left: 10px;
+    animation: pulse-save 2s infinite;
+}
+@keyframes pulse-save {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+.deal-item .order-button {
+    /* Uses global .neon-button style */
+    display: inline-block; /* For centering if needed */
+    width: auto;
+}
+
+/* Rice Grid Specific (might not need much if food-items-grid is sufficient) */
+.rice-grid .food-item-card {
+    /* Any specific styling for rice items */
+}
+.rice-grid .food-item-card h4 {
+    font-size: 1.1em; /* Slightly smaller for rice names */
+}
+
+/* Drinks Grid Specific */
+.drinks-grid .food-item-card img {
+    /* If you add images for drinks, style them here */
+    height: 150px; /* Example for drink images */
+}
+
+
+/* Pagkain Page Specific Responsive */
+@media (max-width: 768px) {
+    .menu-header-banner h2 { font-size: 2em; }
+    .menu-header-banner .tagline { font-size: 1em; }
+    .menu-category h3 { font-size: 1.6em; }
+    .food-items-grid {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+    .chichirya-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-header-banner h2 { font-size: 1.7em; }
+    .menu-category h3 { font-size: 1.4em; }
+    .food-item-card h4 { font-size: 1.1em; }
+    .food-item-card .price { font-size: 1.1em; }
+    .chichirya-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    .snack-item img { width: 70px; height: 70px; }
+    .snack-item p { font-size: 0.8em; }
+}
+.order-button.ordered-success {
+    background-color: #28a745 !important; /* Green for success */
+    color: #fff !important;
+    border-color: #1e7e34 !important; /* Darker green border */
+    box-shadow: 0 0 10px #28a745, inset 0 0 5px rgba(255,255,255,0.2) !important;
+    cursor: default !important;
+    transform: none !important; /* Prevent hover transform if it's ordered */
+}
+.order-button.ordered-success:hover {
+    background-color: #218838 !important; /* Slightly darker green on hover */
+    box-shadow: 0 0 12px #28a745, inset 0 0 7px rgba(255,255,255,0.3) !important;
+}
+.order-button.ordered-success i {
+    margin-right: 5px;
+}

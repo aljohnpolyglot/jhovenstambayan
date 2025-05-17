@@ -1,0 +1,292 @@
+/* --- Bilyaran Page - Cue Masters' Corner / Neon 8-Ball Heaven --- */
+.billiards-section {
+    /* .page-content styles from global.css apply */
+}
+
+.billiards-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #00f2ea; /* Neon Cyan separator */
+}
+
+.neon-sign-text {
+    font-family: 'Luckiest Guy', cursive; /* Or another dedicated neon font */
+    font-size: 2.8em;
+    color: #fff;
+    text-align: center;
+    animation: flicker-neon-sign 2s infinite alternate;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    margin-bottom: 5px;
+}
+.neon-sign-text span {
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #39ff14, /* Neon Green */
+        0 0 30px #39ff14,
+        0 0 40px #39ff14,
+        0 0 55px #39ff14,
+        0 0 75px #39ff14;
+}
+.neon-sign-text i {
+    font-size: 0.8em;
+    vertical-align: middle;
+}
+@keyframes flicker-neon-sign {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #39ff14,
+            0 0 80px #39ff14,
+            0 0 90px #39ff14,
+            0 0 100px #39ff14,
+            0 0 150px #39ff14;
+    }
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }
+}
+
+.billiards-header .tagline {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    color: #00f2ea;
+    text-shadow: 0 0 3px #00f2ea;
+    margin-top: -5px;
+}
+
+.billiards-main-area {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allow sidebar to wrap on smaller screens */
+}
+
+.game-table-zone {
+    flex: 3;
+    min-width: 300px; /* Ensure it doesn't get too squished */
+    background-color: #0d0d0d;
+    padding: 15px;
+    border-radius: 10px;
+    border: 3px solid #2c2c2c; /* Darker border for the zone */
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.7), 0 0 10px rgba(57, 255, 20, 0.1); /* Subtle green outer glow */
+    position: relative;
+    /* Optional: background-image: url('../images/billiards_table_bg.jpg'); */
+    /* background-size: cover; background-position: center; */
+}
+.table-status-light {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+    display: inline-block;
+    position: absolute;
+    top: -20px; /* Position it slightly above the game zone */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+#tableStatusIndicator {
+    background-color: #39ff14; /* Neon Green */
+    color: #111;
+    padding: 5px 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+    animation: pulse-status 1.5s infinite ease-in-out;
+}
+@keyframes pulse-status {
+    0% { box-shadow: 0 0 10px #39ff14, 0 0 15px #39ff14; transform: scale(1); }
+    50% { box-shadow: 0 0 15px #39ff14, 0 0 25px #39ff14, 0 0 5px #fff; transform: scale(1.05); }
+    100% { box-shadow: 0 0 10px #39ff14, 0 0 15px #39ff14; transform: scale(1); }
+}
+
+
+.billiards-game-container iframe {
+    max-width: 100%;
+    border-radius: 8px;
+    display: block;
+    margin: 20px auto 10px auto; /* Added top margin for status light */
+    border: 4px solid #1a1a1a; /* Inner frame for the game screen */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.game-sound-effects {
+    text-align: center;
+    margin-top: 15px;
+}
+.sfx-btn {
+    font-size: 0.85em !important;
+    padding: 8px 12px !important;
+    margin: 5px !important;
+}
+.sfx-btn i { margin-right: 5px; }
+
+
+.billiards-sidebar {
+    flex: 1;
+    min-width: 250px; /* Ensure sidebar has enough width */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.leaderboard-widget, .billiards-lingo-widget {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+.leaderboard-widget h4, .billiards-lingo-widget h4 {
+    margin-top: 0;
+    /* Color and text-shadow from global.css h4 */
+    border-bottom: 1px solid currentColor; /* Use h4's neon color */
+    padding-bottom: 8px;
+}
+.leaderboard-widget h4 i, .billiards-lingo-widget h4 i {
+    margin-right: 8px;
+}
+.neon-icon-yellow { color: #f0ff00; }
+.neon-icon-cyan { color: #00f2ea; }
+
+
+#leaderboardList {
+    list-style: none;
+    padding: 0;
+    color: #ccc;
+}
+#leaderboardList li {
+    padding: 6px 0;
+    border-bottom: 1px dotted #383838;
+    font-size: 0.9em;
+}
+#leaderboardList li:last-child { border-bottom: none; }
+#leaderboardList li i { margin-right: 8px; color: #f0ff00; } /* Trophy/Star color */
+
+#iWonBtn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.billiards-lingo-widget ul {
+    list-style: none;
+    padding: 0;
+}
+.billiards-lingo-widget ul li {
+    padding: 8px 5px;
+    font-size: 0.9em;
+    color: #00f2ea;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+.billiards-lingo-widget ul li:hover {
+    background-color: rgba(0, 242, 234, 0.1);
+}
+.billiards-lingo-widget ul li strong {
+    color: #fff;
+}
+.billiards-lingo-widget ul li .lingo-def {
+    color: #aaa;
+    font-style: italic;
+    font-size: 0.9em;
+    display: none; /* Shown on click by JS if implemented */
+}
+
+
+.billiards-tambay-rules {
+    background-color: rgba(20,20,20, 0.7);
+    border: 2px dashed #ff007f; /* Neon Pink dashed border */
+    padding: 20px;
+    border-radius: 8px;
+    color: #ccc;
+    margin-top: 30px;
+    box-shadow: 0 0 10px rgba(255,0,127,0.2);
+}
+.billiards-tambay-rules h3 {
+    color: #ff007f; /* Neon Pink for rules header */
+    text-shadow: 0 0 5px #ff007f;
+    margin-top: 0;
+    text-align: center;
+}
+.neon-icon-pink { color: #ff007f; }
+.billiards-tambay-rules ul {
+    list-style: none;
+    padding-left: 0;
+}
+.billiards-tambay-rules ul li {
+    margin-bottom: 10px;
+    padding-left: 28px;
+    position: relative;
+    font-size: 0.95em;
+}
+.billiards-tambay-rules ul li i.fa-hand-paper,
+.billiards-tambay-rules ul li i.fa-cookie-bite,
+.billiards-tambay-rules ul li i.fa-sad-tear,
+.billiards-tambay-rules ul li i.fa-handshake,
+.billiards-tambay-rules ul li i.fa-thumbs-up,
+.billiards-tambay-rules ul li i.fa-microphone-alt {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #00f2ea;
+    text-shadow: 0 0 3px #00f2ea;
+    font-size: 1.1em;
+}
+
+.billiards-pustahan-link {
+    margin-top: 30px;
+    padding: 15px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.3);
+    border-top: 2px solid #f0ff00;
+    border-bottom: 2px solid #f0ff00;
+}
+.billiards-pustahan-link h4 {
+    margin-top: 0;
+}
+.billiards-pustahan-link p {
+    color: #ccc;
+}
+.billiards-pustahan-link .neon-link {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Responsive Bilyaran */
+@media (max-width: 992px) { /* Tablet size adjustments */
+    .billiards-main-area {
+        flex-direction: column;
+    }
+    .game-table-zone, .billiards-sidebar {
+        flex: none; /* Reset flex */
+        width: 100%;
+    }
+    .billiards-sidebar {
+        flex-direction: row; /* Put sidebar items side-by-side if space allows */
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .leaderboard-widget, .billiards-lingo-widget {
+        flex-basis: 48%; /* Roughly half width */
+        min-width: 250px; /* Ensure they don't get too small */
+    }
+}
+
+@media (max-width: 600px) {
+    .neon-sign-text { font-size: 2em; }
+    .billiards-header .tagline { font-size: 1em; }
+    .billiards-game-container iframe { height: 400px; }
+    .billiards-sidebar {
+        flex-direction: column; /* Stack sidebar items again on very small screens */
+    }
+    .leaderboard-widget, .billiards-lingo-widget {
+        flex-basis: 100%;
+    }
+}

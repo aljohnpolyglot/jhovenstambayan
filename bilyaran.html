@@ -42,19 +42,25 @@
                     <div class="table-status-light">
                         <span id="tableStatusIndicator">TABLE IS OPEN!</span>
                     </div>
-                    <div class="game-embed-container billiards-game-container">
+                   <div class="game-embed-container billiards-game-container">
                         <iframe
-                            id='item-direct-container'
+                            id='jsbilliards-game-iframe'
                             class='item-direct-container resizable'
-                            width='100%' /* Adjusted for responsiveness */
-                            height='500' /* Adjusted height */
                             allow='autoplay'
                             allowfullscreen
                             frameBorder='0'
-                            scrolling='no'
-                            src='https://html5.gamedistribution.com/rvvASMiM/260b0fa8275c4f51a995340b6b791109/index.html?gd_sdk_referrer_url=https://y8.com/games/billiards'
-                            title="Billiards Game"
+                            scrolling='no' 
+                            src='https://cptleo92.github.io/JSBilliards/'
+                            title="JSBilliards Game"
+                            style="width: 100%; height: 100%;" /* Let CSS container control dimensions */
                         ></iframe>
+                        <p class="game-caption"><i>JSBilliards by Leo Cheng - Astig 'to, Paps! Hintayin lang mag-load.</i></p>
+                    </div>
+                    <!-- ... existing iframe code ... -->
+                    <p class="game-caption"><i>JSBilliards by Leo Cheng - Astig 'to, Paps! Hintayin lang mag-load.</i></p>
+                    <button id="fullscreenBilliardsBtn" class="neon-button sfx-btn"><i class="fas fa-expand"></i> Fullscreen Mode!</button> <!-- NEW BUTTON -->
+                    <div class="game-sound-effects">
+                        <!-- ... existing sfx buttons ... -->
                     </div>
                     <div class="game-sound-effects">
                         <button class="sfx-btn neon-button-alt" onclick="playSoundEffect('chalk')"><i class="fas fa-chalkboard-teacher"></i> Chalk Up!</button>
@@ -79,10 +85,11 @@
                         <h4><i class="fas fa-comments neon-icon-cyan"></i> Bilyar Lingo 101</h4>
                         <ul>
                             <li onclick="showLingo('Sablay: Missed shot, parang pag-asa mo sa kanya. LOL!')"><strong>Sablay</strong> - <span class="lingo-def">Missed shot</span></li>
-                            <li onclick="showLingo('Pasok Lahat: Cleared the table! Galing!')"><strong>Pasok Lahat</strong> - <span class="lingo-def">Cleared table</span></li>
-                            <li onclick="showLingo('Chamba Shot: Lucky shot! Swerte mo naman!')"><strong>Chamba Shot</strong> - <span class="lingo-def">Lucky shot</span></li>
-                            <li onclick="showLingo('Yabang Shot: Pang-mayabang na tira. Pag pumasok, astig!')"><strong>Yabang Shot</strong> - <span class="lingo-def">Show-off shot</span></li>
-                            <li onclick="showLingo('Lastiko: Cue ball na nagba-bounce ng marami. Parang bola ng basketball!')"><strong>Lastiko</strong> - <span class="lingo-def">Multiple C</span></li>
+                            <li onclick="showLingo('Pasok Lahat: Cleared the table! Galing! Pang-pro!')"><strong>Pasok Lahat</strong> - <span class="lingo-def">Cleared table</span></li>
+                            <li onclick="showLingo('Chamba Shot: Lucky shot! Swerte mo naman, parang nanalo sa lotto!')"><strong>Chamba Shot</strong> - <span class="lingo-def">Lucky shot</span></li>
+                            <li onclick="showLingo('Yabang Shot: Pang-mayabang na tira. Pag pumasok, astig! Pag hindi, epic fail!')"><strong>Yabang Shot</strong> - <span class="lingo-def">Show-off shot</span></li>
+                            <li onclick="showLingo('Lastiko: Cue ball na nagba-bounce ng marami. Parang bola ng basketball na pinatalbog ni Jordan!')"><strong>Lastiko</strong> - <span class="lingo-def">Multiple Cushions</span></li>
+                            <li onclick="showLingo('Kangkong: Madaling kalaban, o madaling matalo. Wag kang maging kangkong, Paps!')"><strong>Kangkong</strong> - <span class="lingo-def">Easy Opponent</span></li>
                         </ul>
                     </div>
                 </div>
@@ -91,24 +98,25 @@
             <div class="billiards-tambay-rules">
                 <h3><i class="fas fa-scroll neon-icon-pink"></i> House Rules & Etiquette ni Jhoven</h3>
                 <ul>
-                    <li><i class="fas fa-hand-paper"></i> Bawal ang 'Masiao' (Distractions habang may titira).</li>
-                    <li><i class="fas fa-cookie-bite"></i> Talo, Taya sa Next Round ng Crispy Pata o Sisig.</li>
-                    <li><i class="far fa-sad-tear"></i> Walang Iyakan 'Pag Na-Scratch o natalo. Laro lang!</li>
-                    <li><i class="fas fa-handshake"></i> Respeto sa Tako, sa Mesa, at sa Kalaban.</li>
-                    <li><i class="fas fa-thumbs-up"></i> Huwag Kalimutan ang "Good Game!" pagkatapos.</li>
-                    <li><i class="fas fa-microphone-alt"></i> Pwedeng kumanta habang naghihintay ng tira (Videoke is Life!).</li>
+                    <li><i class="fas fa-hand-paper"></i> Bawal ang 'Masiao' (Distractions habang may titira). Focus Paps!</li>
+                    <li><i class="fas fa-cookie-bite"></i> Talo, Taya sa Next Round ng Crispy Pata o Sizzling Sisig. No excuses!</li>
+                    <li><i class="far fa-sad-tear"></i> Walang Iyakan 'Pag Na-Scratch o natalo. Laro lang, walang personalan!</li>
+                    <li><i class="fas fa-handshake"></i> Respeto sa Tako, sa Mesa, at higit sa lahat, sa Kalaban.</li>
+                    <li><i class="fas fa-thumbs-up"></i> Huwag Kalimutan ang "Good Game!" pagkatapos. Sportsmanship, mga brad!</li>
+                    <li><i class="fas fa-microphone-alt"></i> Pwedeng kumanta habang naghihintay ng tira (Videoke is Life!). Pero wag sintunado, please lang!</li>
+                    <li><i class="fas fa-glasses"></i> Si Jhoven laging tama. Kahit mali, tama pa rin. (Joke lang... pero parang totoo? 😂)</li>
                 </ul>
             </div>
              <div class="billiards-pustahan-link">
-                <h4><i class="fas fa-dice-d6 neon-icon-yellow"></i> Gusto Pumusta?</h4>
-                <p>May tiwala ka ba sa tira mo? <a href="pustahan.html" class="neon-link">Bisitahin ang Main Pustahan Corner ni Jhoven!</a> Baka yumaman ka (sa chichirya)!</p>
+                <h4><i class="fas fa-dice-d6 neon-icon-yellow"></i> Gusto Pumusta sa Laban?</h4>
+                <p>May tiwala ka ba sa tira mo o sa kalaban? <a href="pustahan.html" class="neon-link">Bisitahin ang Main Pustahan Central ni Jhoven!</a> Baka yumaman ka (sa chichirya)!</p>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2024 Jhoven's Tambayan - Tira lang ng Tira, Bawal Sumuko! <i class="fas fa-bowling-ball"></i><i class="fas fa-beer"></i></p>
+            <p>© 2024 Jhoven's Tambayan - Tira lang ng Tira, Bawal Sumuko! <i class="fas fa-bowling-ball"></i><i class="fas fa-beer"></i> #8BallHeaven</p>
         </div>
     </footer>
     <script src="js/global_scripts.js"></script>

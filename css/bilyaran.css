@@ -7,12 +7,12 @@
     text-align: center;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 3px solid #00f2ea; /* Neon Cyan separator */
+    border-bottom: 3px solid #00f2ea;
 }
 
 .neon-sign-text {
-    font-family: 'Luckiest Guy', cursive; /* Or another dedicated neon font */
-    font-size: 2.8em;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2.6em; /* Slightly adjusted */
     color: #fff;
     text-align: center;
     animation: flicker-neon-sign 2s infinite alternate;
@@ -24,7 +24,7 @@
     text-shadow:
         0 0 5px #fff,
         0 0 10px #fff,
-        0 0 20px #39ff14, /* Neon Green */
+        0 0 20px #39ff14,
         0 0 30px #39ff14,
         0 0 40px #39ff14,
         0 0 55px #39ff14,
@@ -63,157 +63,180 @@
     display: flex;
     gap: 25px;
     margin-bottom: 30px;
-    flex-wrap: wrap; /* Allow sidebar to wrap on smaller screens */
+    flex-wrap: wrap;
 }
 
 .game-table-zone {
-    flex: 3;
-    min-width: 300px; /* Ensure it doesn't get too squished */
+    flex: 2.5; /* Give it more space compared to sidebar if needed, adjust ratio with sidebar */
+    min-width: 300px; 
     background-color: #0d0d0d;
-    padding: 15px;
-    border-radius: 10px;
-    border: 3px solid #2c2c2c; /* Darker border for the zone */
-    box-shadow: inset 0 0 15px rgba(0,0,0,0.7), 0 0 10px rgba(57, 255, 20, 0.1); /* Subtle green outer glow */
+    padding: 15px; /* Reduced padding slightly */
+    border-radius: 12px;
+    border: 3px solid #2c2c2c; 
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 0 15px rgba(57, 255, 20, 0.15); 
     position: relative;
-    /* Optional: background-image: url('../images/billiards_table_bg.jpg'); */
-    /* background-size: cover; background-position: center; */
+    display: flex; /* Added flex to help center game if it's smaller than container */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center game embed horizontally */
 }
 .table-status-light {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px; 
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.1em;
+    font-size: 1.1em; /* Adjusted */
     font-weight: bold;
-    padding: 8px;
+    padding: 8px; 
     border-radius: 5px;
-    display: inline-block;
-    position: absolute;
-    top: -20px; /* Position it slightly above the game zone */
-    left: 50%;
-    transform: translateX(-50%);
+    /* position: absolute; Removed absolute positioning for better flow */
+    /* top: -25px;  */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
     z-index: 10;
+    width: fit-content; /* Make it only as wide as content */
+    margin-left: auto;
+    margin-right: auto;
 }
 #tableStatusIndicator {
-    background-color: #39ff14; /* Neon Green */
+    background-color: #39ff14;
     color: #111;
-    padding: 5px 15px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+    padding: 6px 18px; 
+    border-radius: 25px; 
+    box-shadow: 0 0 12px #39ff14, 0 0 25px #39ff14, inset 0 0 5px rgba(255,255,255,0.3);
     animation: pulse-status 1.5s infinite ease-in-out;
 }
 @keyframes pulse-status {
-    0% { box-shadow: 0 0 10px #39ff14, 0 0 15px #39ff14; transform: scale(1); }
-    50% { box-shadow: 0 0 15px #39ff14, 0 0 25px #39ff14, 0 0 5px #fff; transform: scale(1.05); }
-    100% { box-shadow: 0 0 10px #39ff14, 0 0 15px #39ff14; transform: scale(1); }
+    0% { box-shadow: 0 0 10px #39ff14, 0 0 15px #39ff14, inset 0 0 5px rgba(255,255,255,0.3); transform: scale(1); }
+    50% { box-shadow: 0 0 15px #39ff14, 0 0 25px #39ff14, 0 0 8px #fff, inset 0 0 8px rgba(255,255,255,0.4); transform: scale(1.05); }
+    100% { box-shadow: 0 0 10px #39ff14, 0 0 15px #39ff14, inset 0 0 5px rgba(255,255,255,0.3); transform: scale(1); }
 }
 
+.billiards-game-container {
+    width: 100%;
+    max-width: 720px; /* <<< KEY: Max width for the game itself */
+    aspect-ratio: 800 / 500; /* <<< KEY: Maintain aspect ratio of the original game (approx) */
+    /* height: 450px; /* <<< Remove fixed height, use aspect-ratio instead */
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 0; /* Adjusted from 25px as status light is in flow now */
+    margin-bottom: 10px;
+    position: relative; /* For potential overlays or absolutely positioned elements inside */
+}
 
 .billiards-game-container iframe {
-    max-width: 100%;
-    border-radius: 8px;
     display: block;
-    margin: 20px auto 10px auto; /* Added top margin for status light */
-    border: 4px solid #1a1a1a; /* Inner frame for the game screen */
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border: none;
+    width: 100%;
+    height: 100%; /* <<< KEY: Make iframe fill the aspect-ratio container */
 }
 .game-sound-effects {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 15px; 
+    padding-top: 10px;
+    border-top: 1px dashed #333;
+    width: 100%; /* Make it take full width of game-table-zone */
+    max-width: 720px; /* Align with game max-width */
 }
 .sfx-btn {
     font-size: 0.85em !important;
     padding: 8px 12px !important;
     margin: 5px !important;
 }
-.sfx-btn i { margin-right: 5px; }
+.sfx-btn i { margin-right: 6px; }
 
 
 .billiards-sidebar {
-    flex: 1;
-    min-width: 250px; /* Ensure sidebar has enough width */
+    flex: 1.2; /* Adjust ratio if needed */
+    min-width: 280px; 
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 20px; /* Reduced gap */
 }
 
 .leaderboard-widget, .billiards-lingo-widget {
-    background-color: #1e1e1e;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #333;
+    background-color: #1a1a1a;
+    padding: 15px; /* Reduced padding */
+    border-radius: 10px;
+    border: 1px solid #2d2d2d;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
 }
 .leaderboard-widget h4, .billiards-lingo-widget h4 {
     margin-top: 0;
-    /* Color and text-shadow from global.css h4 */
-    border-bottom: 1px solid currentColor; /* Use h4's neon color */
-    padding-bottom: 8px;
+    border-bottom: 1px solid currentColor; 
+    padding-bottom: 8px; 
+    font-size: 1.2em; /* Adjusted */
 }
 .leaderboard-widget h4 i, .billiards-lingo-widget h4 i {
     margin-right: 8px;
 }
-.neon-icon-yellow { color: #f0ff00; }
-.neon-icon-cyan { color: #00f2ea; }
-
+.neon-icon-yellow { color: #f0ff00; text-shadow: 0 0 4px #f0ff00; }
+.neon-icon-cyan { color: #00f2ea; text-shadow: 0 0 4px #00f2ea; }
 
 #leaderboardList {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
     color: #ccc;
+    max-height: 150px; /* Control height */
+    overflow-y: auto;
 }
 #leaderboardList li {
     padding: 6px 0;
     border-bottom: 1px dotted #383838;
-    font-size: 0.9em;
+    font-size: 0.9em; 
+    display: flex; 
+    align-items: center;
 }
 #leaderboardList li:last-child { border-bottom: none; }
-#leaderboardList li i { margin-right: 8px; color: #f0ff00; } /* Trophy/Star color */
+#leaderboardList li i { margin-right: 10px; color: #f0ff00; font-size: 1.1em; }
 
 #iWonBtn {
     display: block;
     width: 100%;
     margin-top: 10px;
+    padding: 10px !important; 
 }
 
 .billiards-lingo-widget ul {
     list-style: none;
     padding: 0;
+    max-height: 150px; /* Control height */
+    overflow-y: auto;
 }
 .billiards-lingo-widget ul li {
     padding: 8px 5px;
     font-size: 0.9em;
     color: #00f2ea;
-    cursor: pointer;
+    cursor: help; 
     border-radius: 4px;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
+    border-bottom: 1px dotted #333;
 }
+.billiards-lingo-widget ul li:last-child { border-bottom: none; }
 .billiards-lingo-widget ul li:hover {
-    background-color: rgba(0, 242, 234, 0.1);
+    background-color: rgba(0, 242, 234, 0.15);
+    color: #fff;
 }
 .billiards-lingo-widget ul li strong {
     color: #fff;
-}
-.billiards-lingo-widget ul li .lingo-def {
-    color: #aaa;
-    font-style: italic;
-    font-size: 0.9em;
-    display: none; /* Shown on click by JS if implemented */
+    font-family: 'Orbitron', sans-serif;
 }
 
 
 .billiards-tambay-rules {
-    background-color: rgba(20,20,20, 0.7);
-    border: 2px dashed #ff007f; /* Neon Pink dashed border */
-    padding: 20px;
-    border-radius: 8px;
-    color: #ccc;
+    background-color: rgba(20,20,20, 0.75);
+    border: 2px dashed #ff007f; 
+    padding: 20px; 
+    border-radius: 10px; /* More rounded */
+    color: #d0d0d0; 
     margin-top: 30px;
-    box-shadow: 0 0 10px rgba(255,0,127,0.2);
+    box-shadow: 0 0 15px rgba(255,0,127,0.25);
 }
 .billiards-tambay-rules h3 {
-    color: #ff007f; /* Neon Pink for rules header */
-    text-shadow: 0 0 5px #ff007f;
+    color: #ff007f;
+    text-shadow: 0 0 5px #ff007f, 0 0 2px #fff;
     margin-top: 0;
     text-align: center;
+    font-size: 1.5em; /* Adjusted */
 }
 .neon-icon-pink { color: #ff007f; }
 .billiards-tambay-rules ul {
@@ -222,71 +245,228 @@
 }
 .billiards-tambay-rules ul li {
     margin-bottom: 10px;
-    padding-left: 28px;
+    padding-left: 30px;
     position: relative;
-    font-size: 0.95em;
+    font-size: 0.95em; 
+    line-height: 1.5;
 }
-.billiards-tambay-rules ul li i.fa-hand-paper,
-.billiards-tambay-rules ul li i.fa-cookie-bite,
-.billiards-tambay-rules ul li i.fa-sad-tear,
-.billiards-tambay-rules ul li i.fa-handshake,
-.billiards-tambay-rules ul li i.fa-thumbs-up,
-.billiards-tambay-rules ul li i.fa-microphone-alt {
+.billiards-tambay-rules ul li i {
     position: absolute;
     left: 0;
-    top: 2px;
+    top: 4px;
     color: #00f2ea;
-    text-shadow: 0 0 3px #00f2ea;
-    font-size: 1.1em;
+    text-shadow: 0 0 4px #00f2ea;
+    font-size: 1.2em;
 }
 
 .billiards-pustahan-link {
     margin-top: 30px;
-    padding: 15px;
+    padding: 18px; /* Adjusted */
     text-align: center;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.35);
     border-top: 2px solid #f0ff00;
     border-bottom: 2px solid #f0ff00;
+    border-radius: 8px;
 }
 .billiards-pustahan-link h4 {
     margin-top: 0;
+    font-size: 1.3em; /* Adjusted */
 }
 .billiards-pustahan-link p {
     color: #ccc;
+    font-size: 1em; /* Adjusted */
 }
 .billiards-pustahan-link .neon-link {
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.1em; /* Adjusted */
+    text-decoration: underline;
+    text-shadow: 0 0 5px #ff007f;
+}
+.billiards-pustahan-link .neon-link:hover {
+    text-shadow: 0 0 8px #ff007f, 0 0 5px #fff;
 }
 
-/* Responsive Bilyaran */
-@media (max-width: 992px) { /* Tablet size adjustments */
+/* Responsive Bilyaran - Further adjustments might be needed based on game's own responsiveness */
+@media (max-width: 992px) {
     .billiards-main-area {
         flex-direction: column;
     }
     .game-table-zone, .billiards-sidebar {
-        flex: none; /* Reset flex */
+        flex: none; 
         width: 100%;
+        box-sizing: border-box;
     }
     .billiards-sidebar {
-        flex-direction: row; /* Put sidebar items side-by-side if space allows */
+        flex-direction: column; /* Stack sidebar items on smaller tablets too */
+        /* If you preferred side-by-side for tablet, revert to:
+        flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-around; */
     }
     .leaderboard-widget, .billiards-lingo-widget {
-        flex-basis: 48%; /* Roughly half width */
-        min-width: 250px; /* Ensure they don't get too small */
+        flex-basis: 100%; /* Full width when stacked */
+        min-width: unset; /* Remove min-width if stacked */
+    }
+    .billiards-game-container {
+        /* aspect-ratio will handle height based on width */
+        /* No need to set fixed height here, let max-width and aspect-ratio do the work */
+        max-width: 100%; /* Allow it to shrink fully */
     }
 }
 
 @media (max-width: 600px) {
-    .neon-sign-text { font-size: 2em; }
-    .billiards-header .tagline { font-size: 1em; }
-    .billiards-game-container iframe { height: 400px; }
+    .neon-sign-text { font-size: 1.8em; } /* Further reduce for small screens */
+    .billiards-header .tagline { font-size: 0.9em; }
+    .billiards-game-container {
+         /* The aspect-ratio property will maintain the game's shape as width changes.
+            You might adjust min-height if the game looks too squashed vertically on very narrow screens,
+            but generally, aspect-ratio is preferred over fixed height for responsiveness. */
+        min-height: 300px; /* Example: prevent it from becoming too flat */
+    }
+    .leaderboard-widget h4, .billiards-lingo-widget h4 { font-size: 1.1em; }
+    .billiards-tambay-rules h3 { font-size: 1.3em; }
+    .billiards-tambay-rules ul li { font-size: 0.85em; }
+}
+#fullscreenBilliardsBtn {
+    display: block; /* Make it take its own line or adjust margin */
+    margin: 10px auto 15px auto; /* Center it below the game caption */
+    padding: 10px 20px !important;
+    font-size: 1em !important;
+    background-color: rgba(255, 0, 127, 0.15); /* Neon Pinkish */
+    border-color: #ff007f;
+    color: #ff007f;
+    box-shadow: 0 0 7px #ff007f, inset 0 0 7px rgba(255, 0, 127, 0.5);
+}
+
+#fullscreenBilliardsBtn:hover {
+    background-color: #ff007f;
+    color: #121212;
+    box-shadow: 0 0 18px #ff007f, 0 0 30px #ff007f, inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+#fullscreenBilliardsBtn i {
+    margin-right: 8px;
+}
+/* --- Add these to css/bilyaran.css (or global.css for header/footer) --- */
+
+@media (orientation: landscape) and (max-height: 500px) { /* Target smaller landscape devices */
+    
+    /* Global adjustments for landscape mobile */
+    body {
+        /* Potentially hide oversized elements or reduce padding if needed */
+    }
+    header {
+        padding: 0.5em 0; /* Reduce header padding */
+    }
+    header .logo img {
+        height: 40px; /* Smaller logo */
+        margin-right: 8px;
+    }
+    header .logo h1 {
+        font-size: 1.5em; /* Smaller title */
+    }
+    header nav ul {
+        /* Consider making nav more compact or using a burger menu for landscape too */
+        /* For simplicity, we might just let it wrap or overflow if too wide */
+        font-size: 0.8em;
+    }
+    header nav ul li a {
+        padding: 6px 8px;
+    }
+    footer {
+        padding: 0.8em 0;
+        font-size: 0.7em;
+    }
+    .page-content {
+        padding: 10px; /* Reduce padding on page content */
+        margin-top: 5px; /* Less space from header */
+    }
+
+    /* Bilyaran Page Specific Landscape Mobile */
+    .billiards-header h2.neon-sign-text {
+        font-size: 1.8em; /* Smaller title in landscape */
+    }
+    .billiards-header .tagline {
+        font-size: 0.9em;
+    }
+
+    .billiards-main-area {
+        flex-direction: column; /* Force stacking in landscape if screen is short */
+        gap: 15px;
+    }
+    .game-table-zone, .billiards-sidebar {
+        width: 100%;
+        flex-basis: auto; /* Allow them to size naturally when stacked */
+    }
+
+    .game-table-zone {
+        padding: 10px;
+    }
+    
+    .table-status-light {
+        font-size: 0.9em;
+        padding: 5px 10px;
+        top: -15px; /* Adjust if it overlaps too much */
+    }
+
+    .billiards-game-container {
+        /* The aspect-ratio should help here.
+           You might want to set a max-height to prevent it from becoming too tall
+           if the width is still significant but height is constrained. */
+        max-height: calc(100vh - 150px); /* Example: viewport height minus some space for header/footer/other elements */
+        min-height: 250px; /* Don't let it get too tiny */
+    }
+    
+    .billiards-game-container iframe {
+        /* width and height 100% should still apply from previous CSS */
+    }
+
+    .game-sound-effects {
+        margin-top: 10px;
+        padding-top: 5px;
+    }
+    .sfx-btn, #fullscreenBilliardsBtn {
+        font-size: 0.8em !important;
+        padding: 6px 10px !important;
+        margin: 3px !important;
+    }
+
     .billiards-sidebar {
-        flex-direction: column; /* Stack sidebar items again on very small screens */
+        gap: 10px; /* Smaller gap between sidebar widgets */
     }
     .leaderboard-widget, .billiards-lingo-widget {
-        flex-basis: 100%;
+        padding: 10px;
+        font-size: 0.9em; /* Slightly smaller text in sidebar widgets */
     }
+    .leaderboard-widget h4, .billiards-lingo-widget h4 {
+        font-size: 1.1em;
+    }
+    #leaderboardList li, .billiards-lingo-widget ul li {
+        font-size: 0.85em;
+        padding: 5px 0;
+    }
+
+    .billiards-tambay-rules {
+        padding: 15px;
+        margin-top: 20px;
+    }
+    .billiards-tambay-rules h3 { font-size: 1.2em; }
+    .billiards-tambay-rules ul li { font-size: 0.85em; margin-bottom: 6px; padding-left: 25px; }
+    .billiards-tambay-rules ul li i { font-size: 1em; top: 3px;}
+
+    .billiards-pustahan-link {
+        padding: 10px;
+        margin-top: 20px;
+    }
+    .billiards-pustahan-link h4 {font-size: 1.1em;}
+    .billiards-pustahan-link p {font-size: 0.9em;}
+}
+
+/* Additional check for very narrow landscape where game might still be too big */
+@media (orientation: landscape) and (max-width: 680px) and (max-height: 400px) {
+    .billiards-game-container {
+        max-height: calc(100vh - 120px); /* Even more aggressive height constraint */
+    }
+     header .logo h1 { font-size: 1.2em; }
+     header nav ul { display: none; } /* Optionally hide nav on very small landscape */
 }

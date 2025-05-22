@@ -1,32 +1,13 @@
-/* css/player.css */
-
-/*
-  This targets the container where the player will live.
-  Your existing CSS might already handle its sizing.
-  This ensures it has a black background and is ready to contain the player.
-*/
 .stream-player-container {
-    background-color: #000; /* Black background for the player area */
-    /*
-      The width and height of this container should be defined by your existing
-      index.css or through the parent elements like .jumbotron-frame.
-      The iframe previously used width="100%" height="100%", so this
-      container should already have dimensions.
-    */
+    width: 100%; /* Or a specific width like 800px */
+    height: 480px; /* <<-- CRITICAL: Give it a height! Or use vh, aspect-ratio, etc. */
+    background-color: #111; /* Temporary: to see if the container itself shows up */
+    position: relative; /* Often good for positioning player controls */
+    border: 2px solid red; /* TEMPORARY DEBUG: To see if the container exists */
 }
 
-/*
-  This styles the Clappr player div itself.
-  It will take the full width and height of its parent (.stream-player-container).
-*/
+/* The #player div will then fill this container */
 #player {
     width: 100%;
     height: 100%;
-    background-color: #000; /* Fallback background for the player element itself */
-}
-
-/* Optional: Minor adjustments to Clappr's default UI if needed */
-#player .media-control.live [data-media-control] .bar-container[data-seekbar] .bar-scrubber[data-scrubber] {
-    /* Example: Make scrubber more visible if needed */
-    /* background-color: #ff0000; */
 }

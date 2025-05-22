@@ -1,4 +1,3 @@
-// js/utils.js
 import { CONFIG } from './config.js';
 
 export function logError(message, error) {

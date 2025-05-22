@@ -1,4 +1,3 @@
-// js/ui.js
 import { DOMElements, djComments, gameClocks } from './config.js';
 // --- CORRECTED IMPORTS ---
 import { STATE } from './config.js'; // Get STATE directly from config.js

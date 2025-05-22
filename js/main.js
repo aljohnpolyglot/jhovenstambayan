@@ -1,4 +1,3 @@
-// js/main.js
 import { CONFIG, DOMElements, STATE, parengAiPredefinedResponses } from './config.js';
 import { logInfo, logError, logWarn } from './utils.js';
 import { displayMessageInChat, updateGameStatus, toggleTambayRules, closeTambayRules } from './ui.js';
@@ -73,7 +72,7 @@ async function loadNbaTicker() {
         STATE.latestGamesDataForBots = games || []; // Update global state
 
         if (games && games.length > 0) {
-            tickerContentEl.innerHTML = ''; 
+            tickerContentEl.innerHTML = '';
             games.forEach(game => {
                 const gameDate = new Date(game.datetime || game.date);
                 const gameTimePHT = gameDate.toLocaleTimeString('en-PH', { hour: 'numeric', minute: '2-digit', timeZone: 'Asia/Manila' });
@@ -158,7 +157,7 @@ async function loadFeaturedPustahanGame() {
         if (!gamesResponse.ok) throw new Error(`Failed to fetch games for pustahan: ${gamesResponse.status}`);
         const allGames = await gamesResponse.json();
         // logInfo("[Pustahan Widget] Received games for selection:", allGames ? `${allGames.length} games` : "No games data");
-        
+
         STATE.latestGamesDataForBots = allGames || []; // Update global state
 
         const upcomingGame = allGames.find(game =>
@@ -185,7 +184,7 @@ async function loadFeaturedPustahanGame() {
         const gameDateForOdds = (upcomingGame.datetime || upcomingGame.date).split('T')[0];
         const oddsApiUrl = `${sportsApiBaseUrl}/api/nba/game-odds/${upcomingGame.id}?date=${gameDateForOdds}`;
         // logInfo(`[Pustahan Widget] Fetching odds from: ${oddsApiUrl}`);
-        
+
         let oddsData = { homeWin: 1.90, awayWin: 1.90, vendor: "Tambayan Default Odds" };
         try {
             const oddsResponse = await fetch(oddsApiUrl);
@@ -282,10 +281,10 @@ function init() {
     updateGameStatus(); // Conceptual Jumbotron scoreboard
     // setInterval(updateGameStatus, CONFIG.GAME_STATUS_UPDATE_INTERVAL); // Keep commented if not actively using
 
-    loadNbaTicker(); 
+    loadNbaTicker();
     // setInterval(loadNbaTicker, 60000 * 3); // Keep commented for now
 
-    loadFeaturedPustahanGame(); 
+    loadFeaturedPustahanGame();
     // setInterval(loadFeaturedPustahanGame, 60000 * 7); // Keep commented for now
 
     // If you want the old Pareng AI random thoughts:
@@ -296,7 +295,7 @@ function init() {
     // Periodic trigger for Ka-Tambay Gemini Bots
     setInterval(() => {
         triggerGeminiBotComment(); // Uses global STATE for game and chat context
-    }, 45000); // e.g., every 45 seconds 
+    }, 45000); // e.g., every 45 seconds
 
     const welcomeText = "Oy mga Paps! Welcome sa Tambayan! Mas astig na ang usapan, may mga bagong Ka-Tambay AI na makikichismis!";
     displayMessageInChat("Pareng AI", welcomeText, {isAI: true, iconClass: 'fas fa-comments'});

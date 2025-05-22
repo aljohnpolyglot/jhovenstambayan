@@ -1,4 +1,3 @@
-// js/config.js
 export const CONFIG = {
     AI_BACKEND_API_URL: "http://localhost:3001/api/ask-pareng-ai",
     SPORTS_DATA_BACKEND_BASE_URL: "http://localhost:3001", // Base URL for your backend server
@@ -69,5 +68,5 @@ export const parengAiPredefinedResponses = {
 };
 
 // For conceptual Jumbotron scoreboard
-export const djCo   mments = ["GRABE ANG LABAN!", "ANO NANGYARI DUN?!", "DEFENSE!", "TIMEOUT MUNA! KAIN SISIG!", "LAST TWO MINUTES!"];
+export const djComments = ["GRABE ANG LABAN!", "ANO NANGYARI DUN?!", "DEFENSE!", "TIMEOUT MUNA! KAIN SISIG!", "LAST TWO MINUTES!"];
 export const gameClocks = ["4Q 02:07", "4Q 00:58", "4Q 00:12 (CLUTCH!)", "OT 02:30"];

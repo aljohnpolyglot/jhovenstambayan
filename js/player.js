@@ -1,4 +1,3 @@
-// js/player.js
 document.addEventListener('DOMContentLoaded', function() {
     // Check if Clappr library is loaded
     if (typeof Clappr === 'undefined') {

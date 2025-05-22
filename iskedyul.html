@@ -9,153 +9,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
 </head>
+<!-- iskedyul.html -->
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="images/logo_tambayan.png" alt="Jhoven's Tambayan Logo">
-                <h1>Jhoven's Tambayan</h1>
+      <header>
+            <div class="container">
+                <div class="logo">
+                    <img src="images/logo_tambayan.png" alt="Jhoven's Tambayan Logo">
+                    <h1>Jhoven's Tambayan</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#nba-stream-section"><i class="fas fa-basketball-ball"></i> NBA Live!</a></li>
+                        <li><a href="iskedyul.html"  class="active" ></a><i class="fas fa-calendar-alt"></i> Iskedyul</a></li>
+                        <li><a href="bilyaran.html"><i class="fas fa-gamepad-alt"></i> Bilyaran</a></li>
+                        <li><a href="videokehan.html"><i class="fas fa-microphone-alt"></i> Videokehan</a></li>
+                        <li><a href="pagkain.html"><i class="fas fa-utensils"></i> Pagkain</a></li>
+                        <li><a href="pustahan.html"><i class="fas fa-dice"></i> Pustahan!</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="index.html#nba-stream-section"><i class="fas fa-basketball-ball"></i> NBA Live!</a></li>
-                    <li><a href="iskedyul.html" class="active"><i class="fas fa-calendar-alt"></i> Iskedyul</a></li>
-                    <li><a href="bilyaran.html"><i class="fas fa-gamepad-alt"></i> Bilyaran</a></li>
-                    <li><a href="videokehan.html"><i class="fas fa-microphone-alt"></i> Videokehan</a></li>
-                    <li><a href="pagkain.html"><i class="fas fa-utensils"></i> Pagkain</a></li>
-                    <li><a href="pustahan.html"><i class="fas fa-dice"></i> Pustahan!</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
+        </header>
+    <!-- ... (header) ... -->
     <main class="container page-content">
         <section class="schedule-section">
             <div class="schedule-header">
                 <h2><i class="fas fa-calendar-days"></i> Iskedyul ng mga Bigating Bakbakan! <i class="fas fa-fire-alt"></i></h2>
-                <p class="timezone-note"><i class="fas fa-clock"></i> Lahat ng Oras ay Philippine Tambayan Time (PHT), Paps!</p>
+                <p class="timezone-note"><i class="fas fa-clock"></i> Oras ay PHT (Philippine Tambayan Time)</p>
                 <div class="schedule-filters">
-                    <button class="filter-btn active" onclick="filterSchedule('all')">Lahat ng Laro</button>
-                    <button class="filter-btn" onclick="filterSchedule('today')">Ngayong Araw</button>
-                    <button class="filter-btn" onclick="filterSchedule('upcoming')">Mga Susunod</button>
-                    <!-- <select id="teamFilter" onchange="filterByTeam(this.value)">
-                        <option value="all">Pili ng Team...</option>
-                        <option value="LAL">Lakers</option>
-                        <option value="GSW">Warriors</option>
-                         Add more teams 
-                    </select> -->
+                    <label for="dateRangeStart">Mula:</label>
+                    <input type="date" id="dateRangeStart" class="date-filter">
+                    <label for="dateRangeEnd">Hanggang:</label>
+                    <input type="date" id="dateRangeEnd" class="date-filter">
+                    <button id="filterDateRangeBtn" class="filter-btn neon-button-alt">Ipakita Iskedyul!</button>
+                    <!-- <button class="filter-btn active" onclick="filterSchedule('all')">Lahat</button> -->
+                    <!-- Add more filters later if needed -->
                 </div>
             </div>
 
             <div class="schedule-grid" id="scheduleGrid">
-                <!-- Game Day Panel: May 17, 2025 -->
-                <div class="schedule-date-panel" data-date-group="2025-05-17">
-                    <h3 class="date-header">Mayo 17, 2025 <span class="day-of-week">(Sabado ng Gabi sa Pinas!)</span></h3>
-                    <div class="game-schedule-item featured-match" data-datetime="2025-05-17T03:00:00"> <!-- Time is UTC or a consistent timezone, display adjusted by JS or manually set to PHT -->
-                        <div class="team-info team-a">
-                            <img src="https://cdn.nba.com/logos/nba/1610612752/global/L/logo.svg" alt="New York Knicks Logo" class="team-logo-sched">
-                            <span class="team-name">New York Knicks</span>
-                        </div>
-                        <div class="game-details">
-                            <span class="game-time">03:00 AM</span>
-                            <span class="vs-neon">VS</span>
-                            <span class="game-arena">@ Madison Square Garden</span>
-                        </div>
-                        <div class="team-info team-b">
-                            <img src="https://cdn.nba.com/logos/nba/1610612738/global/L/logo.svg" alt="Boston Celtics Logo" class="team-logo-sched">
-                            <span class="team-name">Boston Celtics</span>
-                        </div>
-                        <div class="game-status-indicator">
-                            <span class="status-text live blink-live">LIVE SA TAMBAYAN! <i class="fas fa-satellite-dish"></i></span>
-                            <a href="index.html#nba-stream-section" class="watch-now-btn neon-button-alt">Watch Now!</a>
-                        </div>
-                    </div>
-                    <!-- Add more games for May 17 if any -->
+                <!-- Initial Loading Message -->
+                <div class="loading-message-iskedyul">
+                    <p><i class="fas fa-spinner fa-spin"></i> Naglo-load ng iskedyul, mga Paps... Abang-abang lang!</p>
                 </div>
-
-                <!-- Game Day Panel: May 18, 2025 (Example - from Yahoo Snippet) -->
-                <div class="schedule-date-panel" data-date-group="2025-05-18">
-                    <h3 class="date-header">Mayo 18, 2025 <span class="day-of-week">(Lunes ng Madaling Araw)</span></h3>
-                     <div class="game-schedule-item" data-datetime="2025-05-18T03:30:00">
-                        <div class="team-info team-a">
-                            <img src="https://cdn.nba.com/logos/nba/1610612743/global/L/logo.svg" alt="Denver Nuggets Logo" class="team-logo-sched">
-                            <span class="team-name">Denver Nuggets</span>
-                        </div>
-                        <div class="game-details">
-                            <span class="game-time">03:30 AM</span>
-                            <span class="vs-neon">VS</span>
-                            <span class="game-arena">@ Ball Arena</span>
-                        </div>
-                        <div class="team-info team-b">
-                            <img src="https://cdn.nba.com/logos/nba/1610612760/global/L/logo.svg" alt="Oklahoma City Thunder Logo" class="team-logo-sched">
-                            <span class="team-name">OKC Thunder</span>
-                        </div>
-                        <div class="game-status-indicator">
-                            <span class="status-text upcoming">ABANGAN! <i class="fas fa-stopwatch"></i></span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Game Day Panel: May 20, 2025 (Example) -->
-                <div class="schedule-date-panel" data-date-group="2025-05-20">
-                    <h3 class="date-header">Mayo 20, 2025 <span class="day-of-week">(Miyerkules ng Umaga)</span></h3>
-                     <div class="game-schedule-item" data-datetime="2025-05-20T08:30:00">
-                        <div class="team-info team-a">
-                            <img src="https://cdn.nba.com/logos/nba/1610612750/global/L/logo.svg" alt="Minnesota Timberwolves Logo" class="team-logo-sched">
-                            <span class="team-name">Minnesota Timberwolves</span>
-                        </div>
-                        <div class="game-details">
-                            <span class="game-time">08:30 AM</span>
-                            <span class="vs-neon">VS</span>
-                            <span class="game-arena">@ Target Center</span>
-                        </div>
-                        <div class="team-info team-b">
-                            <img src="images/teams/tbd.png" alt="TBD Logo" class="team-logo-sched"> <!-- Placeholder for TBD -->
-                            <span class="team-name">TBD</span>
-                        </div>
-                        <div class="game-status-indicator">
-                             <span class="status-text upcoming">MALAPIT NA! <i class="fas fa-hourglass-half"></i></span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Game Day Panel: May 21, 2025 (Example) -->
-                <div class="schedule-date-panel" data-date-group="2025-05-21">
-                     <h3 class="date-header">Mayo 21, 2025 <span class="day-of-week">(Huwebes ng Umaga)</span></h3>
-                     <div class="game-schedule-item" data-datetime="2025-05-21T08:00:00">
-                        <div class="team-info team-a">
-                            <img src="https://cdn.nba.com/logos/nba/1610612754/global/L/logo.svg" alt="Indiana Pacers Logo" class="team-logo-sched">
-                            <span class="team-name">Indiana Pacers</span>
-                        </div>
-                        <div class="game-details">
-                            <span class="game-time">08:00 AM</span>
-                            <span class="vs-neon">VS</span>
-                             <span class="game-arena">@ Gainbridge Fieldhouse</span>
-                        </div>
-                        <div class="team-info team-b">
-                            <img src="https://cdn.nba.com/logos/nba/1610612752/global/L/logo.svg" alt="New York Knicks Logo" class="team-logo-sched">
-                            <span class="team-name">New York Knicks</span>
-                        </div>
-                        <div class="game-status-indicator">
-                            <span class="status-text past">TAPOS NA! <a href="zapisi.html#INDvsNYK_20250521" class="replay-link">Replay?</a></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Add more game day panels as needed -->
+                <!-- Game Day Panels and Game Items will be injected here by JS -->
             </div>
             
-            <p class="tip"><i class="fas fa-info-circle"></i> <i>Schedule subject to change without prior notice (minsan biglang may friendly game si Jhoven!). Laging bumisita para updated!</i></p>
+            <p class="tip"><i class="fas fa-info-circle"></i> <i>Schedule subject to change. Laging bumisita para updated!</i></p>
         </section>
     </main>
-
-    <footer>
-        <div class="container">
-            <p>© 2024 Jhoven's Tambayan - Dito Masaya Palagi, Pramis! <i class="fas fa-basketball-ball"></i><i class="fas fa-glass-cheers"></i> #TambayAllNight</p>
-        </div>
-    </footer>
+    <!-- ... (footer) ... -->
     <script src="js/global_scripts.js"></script>
-    <script src="js/iskedyul_scripts.js"></script> <!-- New JS file for schedule page -->
+    <script type="module" src="js/iskedyul_scripts.js"></script> <!-- IMPORTANT: type="module" -->
 </body>
 </html>

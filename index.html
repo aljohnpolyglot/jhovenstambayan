@@ -6,8 +6,15 @@
     <title>Jhoven's Tambayan - NBA Action Central!</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
+    <!-- ADD THIS LINE for the new player CSS -->
+    <link rel="stylesheet" href="css/player.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <!-- ADD THIS LINE for the Clappr Player Library -->
+    <!-- It's good to have this before your custom player.js that uses it -->
+    <script src="//cdn.jsdelivr.net/npm/@clappr/player@0.8/dist/clappr.min.js"></script>
+      <script src="js/player.js"></script>
 </head>
 <body>
     <header>
@@ -36,14 +43,25 @@
         </div>
     </div>
 
+    <div class="live-ticker-container">
+        <div class="ticker-wrap">
+            <div class="ticker-move" id="nbaTickerContent">
+                <div class="ticker-item">Loading NBA scores... <i class="fas fa-basketball-ball fa-spin"></i></div>
+            </div>
+        </div>
+    </div>
+
     <main class="container">
         <section id="nba-stream-section" class="main-content">
             <h2><i class="fas fa-tv"></i> Salang Na! NBA Action Dito sa Jumbotron!</h2>
             <div class="jumbotron-stream-container">
                 <div class="jumbotron-frame">
                     <div class="stream-player-container">
-                        <!-- VK Video Embed from aanba.ru -->
-                        <iframe src="https://vkvideo.ru/video_ext.php?oid=-55574239&id=456420838&hash=4436b033fc1eca49" width="100%" height="100%" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" title="NBA Stream"></iframe>
+                        <!-- REMOVE THIS VK IFRAME: -->
+                        <!-- <iframe src="https://vkvideo.ru/video_ext.php?oid=-55574239&id=456420838&hash=4436b033fc1eca49" width="100%" height="100%" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" title="NBA Stream"></iframe> -->
+
+                        <!-- ADD THIS DIV FOR THE CLAPPR PLAYER: -->
+                        <div id="player"></div>
                     </div>
                     <div class="jumbotron-scoreboard">
                         <div class="team-score home-score">TAMBAYAN ALL-STARS: <span id="homeScore">78</span></div>
@@ -59,9 +77,9 @@
             </div>
             
             <div class="channel-surfing-buttons">
-                <button class="channel-btn" onclick="alert('Channel 1: Main Game! Eto na yun, paps! Dito ang tunay na aksyon!')"><i class="fas fa-satellite-dish"></i> CH 1 (Main)</button>
-                <button class="channel-btn" onclick="alert('Channel 2: Wala tayong budget para sa extra angle, LOL! Focus sa main game! -Jhoven')"><i class="fas fa-tv-alt"></i> CH 2 (Alt Angle)</button>
-                <button class="channel-btn" onclick="alert('Channel 3: Replays? Mamaya na pag tapos ang live, or check mo sa YouTube! Wag apurado!')"><i class="fas fa-history"></i> CH 3 (Replays)</button>
+                <button class="channel-btn" data-channel-msg="Channel 1: Main Game! Eto na yun, paps! Dito ang tunay na aksyon!"><i class="fas fa-satellite-dish"></i> CH 1 (Main)</button>
+                <button class="channel-btn" data-channel-msg="Channel 2: Wala tayong budget para sa extra angle, LOL! Focus sa main game! -Jhoven"><i class="fas fa-tv-alt"></i> CH 2 (Alt Angle)</button>
+                <button class="channel-btn" data-channel-msg="Channel 3: Replays? Mamaya na pag tapos ang live, or check mo sa YouTube! Wag apurado!"><i class="fas fa-history"></i> CH 3 (Replays)</button>
             </div>
 
             <p class="disclaimer"><i>(Paalala: Ang video stream ay sample. Para sa aktuwal na panonood, gamitin ang mga opisyal na NBA streaming services.)</i></p>
@@ -69,25 +87,22 @@
             <div class="highlights-section">
                 <h3><i class="fas fa-bolt"></i> Mga Astig na Nakaraang Laro (Past Game Highlights):</h3>
                 <div class="highlight-video">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/FVLmpVNh668?si=BvaSMc1kz4NCdY9r&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/FVLmpVNh668?si=BvaSMc1kz4NCdY9r&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <p><a href="https://www.youtube.com/results?search_query=nba+highlights" target="_blank" class="neon-link">Manood pa ng Highlights sa YouTube! <i class="fab fa-youtube"></i></a></p>
                 </div>
             </div>
 
-<!-- JHoven's Corner - Mga Eksena sa Tambayan! -->
             <section class="jhovens-corner-section">
                 <h3><i class="fas fa-user-astronaut neon-icon-pink"></i> Jhoven's Corner - Mga Eksena at Sikreto! <i class="fas fa-camera-retro neon-icon-pink"></i></h3>
                 <div class="jhovens-corner-grid">
-                    
                     <div class="corner-item video-item">
                         <h4><i class="fas fa-bolt"></i> Si Jhoven, Nag-Transform!</h4>
-                        <video width="100%" controls poster="images/curry_mouthpiece.jpg"> <!-- Optional: use a placeholder image for poster -->
+                        <video width="100%" controls poster="images/curry_mouthpiece.jpg">
                             <source src="images/jhoven_turning_into_ironman.mp4" type="video/mp4">
                             Sorry, Paps, 'di ma-play ang video. Update mo browser mo!
                         </video>
                         <p class="caption">Ironman ng Tambayan, nagpakitang-gilas!</p>
                     </div>
-
                     <div class="corner-item image-item">
                         <h4><i class="fas fa-file-invoice neon-icon-yellow"></i> NBA 2025 Playoff Script?!</h4>
                         <div class="image-frame leaked-script">
@@ -96,7 +111,6 @@
                         </div>
                         <p class="caption">CONFIDENTIAL: Nasingit ni Jhoven! Wag ipagkalat, ha?!</p>
                     </div>
-
                     <div class="corner-item image-item">
                         <h4><i class="fas fa-project-diagram neon-icon-cyan"></i> Bracket ni Boss Jhoven!</h4>
                         <div class="image-frame">
@@ -104,30 +118,22 @@
                         </div>
                         <p class="caption">Sino kaya ang tatama sa prediksyon? Tayaan na 'to!</p>
                     </div>
-                    
                     <div class="corner-item image-item">
                         <h4><i class="fas fa-bed neon-icon-blue"></i> Pagod na si Boss...</h4>
-                         <div class="image-frame">
+                        <div class="image-frame">
                             <img src="images/jhoven_about_to_sleep.jpg" alt="Jhoven About to Sleep">
                         </div>
                         <p class="caption">Kaka-analyze ng laro! Tulog muna para may energy bukas!</p>
                     </div>
-
                     <div class="corner-item image-item special-collectible">
                         <h4><i class="fas fa-trophy neon-icon-gold"></i> RARE ITEM!</h4>
                         <div class="image-frame display-case">
-                             <img src="images/curry_mouthpiece.jpg" alt="Curry's Mouthpiece">
+                            <img src="images/curry_mouthpiece.jpg" alt="Curry's Mouthpiece">
                         </div>
                         <p class="caption">Mouthpiece ni Steph Curry, nahablot ni Jhoven! (For display only... baka?) <i class="fas fa-grin-stars"></i></p>
                     </div>
-
                 </div>
             </section>
-            <!-- End of Jhoven's Corner -->
-
-
-
-
         </section>
 
         <aside class="sidebar">
@@ -141,26 +147,29 @@
                 </div>
                 <div class="chat-input-area">
                     <input type="text" id="chatInput" placeholder="Type mo dito, pre...">
-                    <button class="neon-button" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
-                    <button class="neon-button-alt" id="shoutOutBtn" onclick="shoutOutMessage()"><i class="fas fa-bullhorn"></i></button>
+                    <button class="neon-button" id="sendChatMsgBtn"><i class="fas fa-paper-plane"></i></button>
+                    <button class="neon-button-alt" id="shoutOutBtn"><i class="fas fa-bullhorn"></i></button>
                 </div>
             </div>
 
             <div id="pustahan-corner" class="pustahan-widget">
                 <h4><i class="fas fa-dice-d6 neon-icon-alt"></i> Pustahan sa Tambayan! <i class="fas fa-dice-d6 neon-icon-alt"></i></h4>
-                <div class="bet-item">
-                    <p><strong>LALABAS NGAYON:</strong> Knicks vs Celtics</p>
-                    <p class="odds-display">Knicks (Odds: KAYA YAN!) - Celtics (Odds: PUSO LANG!)</p>
-                    <button class="bet-button neon-button-alt" onclick="placeBet('Knicks')">Taya sa Knicks!</button>
-                    <button class="bet-button neon-button-alt" onclick="placeBet('Celtics')">Taya sa Celtics!</button>
+                <div class="bet-item" id="featuredGameBetItem">
+                    <p><strong>LALABAS NGAYON:</strong> <span id="pustahanGameMatchup">Loading game...</span></p>
+                    <p class="odds-display">
+                        <span id="pustahanTeamAOdds">Team A (Odds: --)</span> - 
+                        <span id="pustahanTeamBOdds">Team B (Odds: --)</span>
+                    </p>
+                    <button class="bet-button neon-button-alt" id="pustahanBetTeamA" data-bet-game-id="" data-bet-team-name="">Taya sa Team A!</button>
+                    <button class="bet-button neon-button-alt" id="pustahanBetTeamB" data-bet-game-id="" data-bet-team-name="">Taya sa Team B!</button>
                 </div>
-                <div class="bet-item">
+                <div class="bet-item" style="display: none;">
                     <p><strong>PUNTOS NI JALEN BRUNSON:</strong> Over/Under 30.5</p>
                     <p class="odds-display">Over (Odds: EASY MONEY!) - Under (Odds: BAKA NAMAN?)</p>
-                    <button class="bet-button neon-button-alt" onclick="placeBet('Brunson Over 30.5')">Over!</button>
-                    <button class="bet-button neon-button-alt" onclick="placeBet('Brunson Under 30.5')">Under!</button>
+                    <button class="bet-button neon-button-alt" data-bet="Brunson Over 30.5">Over!</button>
+                    <button class="bet-button neon-button-alt" data-bet="Brunson Under 30.5">Under!</button>
                 </div>
-                <div class="last-call-bets">LAST CALL FOR BETS! <i class="fas fa-stopwatch"></i></div>
+                <div class="last-call-bets" id="pustahanLastCall" style="display: none;">LAST CALL FOR BETS! <i class="fas fa-stopwatch"></i></div>
                 <p class="disclaimer-bet"><i>(For entertainment purposes only. Ang matalo, manglilibre ng chichirya! LOL!)</i></p>
             </div>
 
@@ -177,7 +186,7 @@
                     <li><a href="bilyaran.html" class="quick-link-btn"><i class="fas fa-gamepad-alt"></i> Tara, Bilyar!</a></li>
                     <li><a href="videokehan.html" class="quick-link-btn"><i class="fas fa-microphone-alt"></i> Kanta Mode!</a></li>
                     <li><a href="pagkain.html" class="quick-link-btn"><i class="fas fa-utensils"></i> Chibugan Na!</a></li>
-                    <li><a href="#" class="quick-link-btn" onclick="showTambayRules(event)"><i class="fas fa-scroll"></i> Rules ng Tambayan</a></li>
+                    <li><a href="#" class="quick-link-btn" id="showRulesLink"><i class="fas fa-scroll"></i> Rules ng Tambayan</a></li>
                 </ul>
             </div>
 
@@ -189,7 +198,7 @@
                     <li>Cheer Your Team, Respeto sa Iba.</li>
                     <li>Si Jhoven ang Boss Dito. Period. LOL!</li>
                 </ol>
-                 <button class="neon-button-alt" onclick="document.getElementById('tambayRules').style.display='none';" style="margin-top:10px;">Close</button>
+                <button class="neon-button-alt" id="closeRulesBtn" style="margin-top:10px;">Close</button>
             </div>
         </aside>
     </main>
@@ -203,294 +212,12 @@
                 <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-   <!-- ... (rest of your footer) ... -->
-    <!-- ... (rest of your footer) ... -->
     </footer>
 
-   <script src="js/global_scripts.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // --- Configuration ---
-            const CONFIG = {
-                // !!! CRITICAL SECURITY WARNING !!!
-                // FOR LOCAL CONCEPTUAL USE ONLY. NEVER DEPLOY THIS KEY PUBLICLY IN CLIENT-SIDE CODE.
-                // For a real application, this key MUST be handled by a backend server.
-                GEMINI_API_KEY: "AIzaSyDfJspAjl93a5PnPENic7AG8yRT9vwRjh4", // !!! REPLACE OR REMOVE FOR PRODUCTION !!!
-                GEMINI_API_URL_BASE: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent",
-                API_KEY_PLACEHOLDER: "YOUR_ACTUAL_GEMINI_API_KEY_GOES_HERE_SERVER_SIDE", // Used for checks
-                RANDOM_AI_INTERJECTION_CHANCE: 0.15, // 15%
-                RANDOM_AI_INTERJECTION_INTERVAL: 25000, // 25 seconds
-                GAME_STATUS_UPDATE_INTERVAL: 10000, // 10 seconds
-                DEBUG_MODE: true // Set to false in production
-            };
-
-            // --- Element Selectors ---
-            const DOMElements = {
-                chatMessagesContainer: document.getElementById('chatMessagesContainer'),
-                chatInput: document.getElementById('chatInput'),
-                sendChatButton: document.querySelector('.chat-input-area .neon-button:not(#shoutOutBtn)'),
-                shoutOutButton: document.getElementById('shoutOutBtn'),
-                rulesSign: document.getElementById('tambayRules'),
-                homeScoreEl: document.getElementById('homeScore'),
-                guestScoreEl: document.getElementById('guestScore'),
-                djCommentaryEl: document.getElementById('djJhovenCommentary'),
-                gameClockDisplayEl: document.getElementById('gameClockDisplay'),
-                leakedScriptImage: document.querySelector('.leaked-script img'),
-                curryMouthpieceFrame: document.querySelector('.special-collectible .image-frame'),
-                ironmanVideo: document.querySelector('.video-item video'),
-                closeRulesButton: document.querySelector('#tambayRules .neon-button-alt')
-            };
-
-            // --- State Variables ---
-            let isAIThinking = false;
-
-            // --- Pareng AI Predefined Responses (Fallback/Flavor) ---
-            const parengAiPredefinedResponses = {
-                lebron: ["The GOAT! Sabi ko sa inyo eh! 🐐", "King James taking over! Walang makakapigil!", "LeBron with the chase-down block! Classic!"],
-                curry: ["BANG! Steph Curry from downtown! Three-la-la-land! 🔥", "Chef Curry cooking them ankles!", "Night night! Sabi ni Steph."],
-                sisig: ["Uy, sisig! Order na kayo, pahingi ako kahit amoy lang!", "Sisig + malamig na beer = Perfect NBA night!", "Nag-crave tuloy ako ng sisig dahil sa inyo!"],
-                pustahan: ["May taya na ba kayo mga Paps?", "Sino kaya mananalo sa pustahan natin?", "Pusta na habang maaga!"],
-                general_nba: ["Ganda ng laban ngayon! Intense!", "Sino MVP candidate this season?", "May trade rumors ba?"],
-                random_tambay: ["Ang ingay dito sa Tambayan! Parang finals na!", "Jhoven, pa-order ng extra rice!", "Connection check... okay pa ba stream?", "May videoke ba mamaya?"]
-            };
-
-            // --- Utility Functions ---
-            function logError(message, error) {
-                console.error(message, error);
-                // Potentially send to a logging service in a real app
-            }
-
-            function logWarn(message) {
-                if (CONFIG.DEBUG_MODE) console.warn(message);
-            }
-
-            function logInfo(message) {
-                if (CONFIG.DEBUG_MODE) console.log(message);
-            }
-
-            // --- Chat Display Function ---
-            function displayMessageInChat(senderName, messageText, options = {}) {
-                const { isAI = false, isShoutout = false, iconClass = 'fas fa-user', isThinking = false } = options;
-                if (!DOMElements.chatMessagesContainer) return null;
-
-                const messageDiv = document.createElement('div');
-                messageDiv.classList.add('chat-message');
-                if (isAI) messageDiv.classList.add('ai-message');
-                if (isShoutout) messageDiv.classList.add('shoutout');
-                if (isThinking) messageDiv.classList.add('thinking-message'); // For easy removal
-
-                // Sanitize messageText before inserting as HTML if it comes from user input
-                // For now, assuming it's safe or from trusted sources (like AI or predefined)
-                // A more robust solution would use textContent for user-generated parts or a sanitizer library.
-                messageDiv.innerHTML = `<span class="user"><i class="${iconClass} ${isAI ? 'neon-icon-cyan' : (isShoutout ? 'neon-icon-alt' : 'neon-icon')}"></i> ${senderName}:</span> ${messageText}`;
-                DOMElements.chatMessagesContainer.appendChild(messageDiv);
-                DOMElements.chatMessagesContainer.scrollTop = DOMElements.chatMessagesContainer.scrollHeight;
-                return messageDiv; // Return the message element if needed
-            }
-
-            // --- Pareng AI (Gemini Powered) ---
-            async function askParengAiWithGemini(userPrompt) {
-                if (isAIThinking) {
-                    displayMessageInChat("Pareng AI", "Kalma lang, Paps! Nag-iisip pa ako sa nauna mong tanong.", { isAI: true, iconClass: 'fas fa-pause-circle' });
-                    return;
-                }
-
-                if (!CONFIG.GEMINI_API_KEY || CONFIG.GEMINI_API_KEY === CONFIG.API_KEY_PLACEHOLDER || CONFIG.GEMINI_API_KEY === "AIzaSyDfJspAjl93a5PnPENic7AG8yRT9vwRjh4" && CONFIG.DEBUG_MODE) {
-                     // The debug mode check above is just to let your specific test key pass if you are testing.
-                     // In a real scenario, any non-placeholder key would be attempted, but here we explicitly warn.
-                    if (CONFIG.GEMINI_API_KEY === "AIzaSyDfJspAjl93a5PnPENic7AG8yRT9vwRjh4" && CONFIG.DEBUG_MODE) {
-                         logWarn("Using hardcoded conceptual API key for Gemini. THIS IS NOT SAFE FOR PRODUCTION.");
-                    } else {
-                        displayMessageInChat("Pareng AI", "Naku, Paps! Mukhang wala akong API key para mag-isip ngayon. Pa-check sa admin (Jhoven)! (Conceptual use only - Key not set or placeholder!)", { isAI: true, iconClass: 'fas fa-robot' });
-                        logError("Gemini API Key not set or is a placeholder!", CONFIG.GEMINI_API_KEY);
-                        return;
-                    }
-                }
-
-
-                isAIThinking = true;
-                const thinkingMessageEl = displayMessageInChat("Pareng AI", "Nag-iisip si Pareng AI... (Loading from Gemini...)", { isAI: true, iconClass: 'fas fa-spinner fa-spin', isThinking: true });
-
-                const fullPrompt = `You are 'Pareng AI', a witty, very casual, basketball-loving, slightly sarcastic Pinoy friend hanging out in Jhoven's Tambayan, an online sports bar for NBA fans. You love NBA, Pinoy food (especially sisig), videoke, and making jokes. Your responses should be in conversational Taglish (Tagalog-English mix), short to medium length, and fit the vibe of a fun online hangout. Keep it light, humorous, and engaging. Here's the user's message: "${userPrompt}"`;
-                const API_URL = `${CONFIG.GEMINI_API_URL_BASE}?key=${CONFIG.GEMINI_API_KEY}`;
-
-                try {
-                    const response = await fetch(API_URL, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ contents: [{ parts: [{ text: fullPrompt }] }] }),
-                    });
-
-                    if (thinkingMessageEl) thinkingMessageEl.remove(); // Remove thinking message
-
-                    if (!response.ok) {
-                        const errorData = await response.json();
-                        logError("Gemini API Error:", errorData);
-                        displayMessageInChat("Pareng AI", `Naku, nagka-aberya! Error: ${errorData.error?.message || response.statusText}. Sabi ni Jhoven, check mo console, Paps.`, { isAI: true, iconClass: 'fas fa-robot' });
-                        return;
-                    }
-
-                    const data = await response.json();
-                    if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
-                        const aiText = data.candidates[0].content.parts[0].text;
-                        displayMessageInChat("Pareng AI", aiText, { isAI: true, iconClass: 'fas fa-robot' });
-                    } else {
-                        logWarn("Gemini response format unexpected:", data);
-                        displayMessageInChat("Pareng AI", "Hmm, medyo na-mental block ako dun, Paps. Try mo ibang tanong or baka weird yung sagot ni Pareng Google.", { isAI: true, iconClass: 'fas fa-robot' });
-                    }
-
-                } catch (error) {
-                    if (thinkingMessageEl && thinkingMessageEl.parentElement) thinkingMessageEl.remove();
-                    logError("Error calling Gemini API:", error);
-                    displayMessageInChat("Pareng AI", "Ay, nag-offline ata utak ko! Check mo internet mo or baka maintenance si Pareng Google. Try later!", { isAI: true, iconClass: 'fas fa-robot' });
-                } finally {
-                    isAIThinking = false;
-                }
-            }
-
-            // --- Regular Chat & Shoutout Functionality ---
-            function processChatMessage() {
-                if (!DOMElements.chatInput) return;
-                const messageText = DOMElements.chatInput.value.trim();
-                if (messageText === "") return;
-
-                if (messageText.toLowerCase().startsWith("/askparengai ")) {
-                    const userPromptForAI = messageText.substring("/askparengai ".length).trim();
-                    if (userPromptForAI) {
-                        displayMessageInChat("Ikaw", userPromptForAI, { iconClass: 'fas fa-user-ninja' });
-                        askParengAiWithGemini(userPromptForAI);
-                    } else {
-                        displayMessageInChat("System", "Paki-type yung tanong mo kay Pareng AI after ng /askparengai command.", { iconClass: 'fas fa-info-circle' });
-                    }
-                } else {
-                    const userIconClass = Math.random() > 0.5 ? 'fas fa-basketball-ball' : 'fas fa-gamepad-alt';
-                    const userNameText = Math.random() > 0.5 ? 'Ka-Tambay' + Math.floor(Math.random()*100) : 'BallerBoi' + Math.floor(Math.random()*100);
-                    displayMessageInChat(userNameText, messageText, { iconClass: userIconClass });
-                }
-                DOMElements.chatInput.value = "";
-                DOMElements.chatInput.focus();
-            }
-
-            function processShoutOut() {
-                if (!DOMElements.chatInput) return;
-                const messageText = DOMElements.chatInput.value.trim();
-                if (messageText !== "") {
-                    displayMessageInChat("SHOUTOUT NI JHOKER", messageText.toUpperCase(), { isShoutout: true, iconClass: 'fas fa-bullhorn' });
-                    DOMElements.chatInput.value = "";
-                    DOMElements.chatInput.focus();
-                } else {
-                    // Consider a less intrusive notification, e.g., a temporary message near the input
-                    alert("Type ka muna ng ishi-shout out, bossing!");
-                }
-            }
-
-            // --- Pustahan Corner (Conceptual) ---
-            function placeBet(betChoice) {
-                const betConfirmations = [
-                    `Taya mo: ${betChoice}!\nGood luck, Paps! For fun lang 'to. Ang matalo, sagot ang chichirya! 😉`,
-                    `Sure ka na ba sa ${betChoice}? Sige, go for the gold (chichirya)!`,
-                    `${betChoice} ang bet mo! Sana manalo ka para may pang-videoke tayo!`,
-                    `Okay, ${betChoice} locked in! May the odds be ever in your favor (sa chichirya world)!`
-                ];
-                alert(betConfirmations[Math.floor(Math.random() * betConfirmations.length)]);
-            }
-            window.placeBet = placeBet; // Expose globally for inline onclick in HTML
-
-            // --- Tambayan Rules Toggle ---
-            function showTambayRules(event) {
-                if (event) event.preventDefault();
-                if (DOMElements.rulesSign) {
-                    const isHidden = DOMElements.rulesSign.style.display === "none" || DOMElements.rulesSign.style.display === "";
-                    DOMElements.rulesSign.style.display = isHidden ? "block" : "none";
-                    if (isHidden) {
-                        DOMElements.rulesSign.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                }
-            }
-            window.showTambayRules = showTambayRules; // Expose globally
-
-            // --- Conceptual Scoreboard and Commentary Update ---
-            const djComments = ["GRABE ANG LABAN!", "ANO NANGYARI DUN?!", "DEFENSE! DEFENSE!", "TIMEOUT MUNA! KAIN SISIG!", "LAST TWO MINUTES!", "SLAM DUNK YAN!", "ANG INIT NIYA!", "FOUL DAW?!", "BUZZER BEATER BA?!", "THREE POINTS! BANG!", "GANDA NG PASA!", "ROOKIE NAGPAPAKITANG GILAS!", "VETERAN MOVE!"];
-            const gameClocks = ["4Q 02:07", "4Q 00:58", "4Q 00:12 (CLUTCH!)", "OT 02:30", "3Q 06:11", "2Q HALFTIME!", "PAHINGA MUNA MGA TROPA!"];
-
-            function updateGameStatus() {
-                if (DOMElements.homeScoreEl && DOMElements.guestScoreEl) {
-                    DOMElements.homeScoreEl.innerText = Math.floor(Math.random() * 20) + 80;
-                    DOMElements.guestScoreEl.innerText = Math.floor(Math.random() * 20) + 80;
-                }
-                if (DOMElements.djCommentaryEl) {
-                    DOMElements.djCommentaryEl.innerText = `" ${djComments[Math.floor(Math.random() * djComments.length)]} "`;
-                }
-                if (DOMElements.gameClockDisplayEl) {
-                    DOMElements.gameClockDisplayEl.innerText = gameClocks[Math.floor(Math.random() * gameClocks.length)];
-                }
-            }
-
-            // --- Random AI Interjections ---
-            function triggerRandomAiInterjection() {
-                if (DOMElements.chatMessagesContainer && Math.random() < CONFIG.RANDOM_AI_INTERJECTION_CHANCE && !isAIThinking) {
-                    const randomCategory = Object.keys(parengAiPredefinedResponses)[Math.floor(Math.random() * Object.keys(parengAiPredefinedResponses).length)];
-                    const randomMessage = parengAiPredefinedResponses[randomCategory][Math.floor(Math.random() * parengAiPredefinedResponses[randomCategory].length)];
-                    displayMessageInChat("Pareng AI (Random Thought)", randomMessage, { isAI: true, iconClass: 'fas fa-brain' });
-                }
-            }
-
-            // --- Event Listeners Setup ---
-            function setupEventListeners() {
-                if (DOMElements.sendChatButton) {
-                    DOMElements.sendChatButton.addEventListener('click', processChatMessage);
-                }
-                if (DOMElements.chatInput) {
-                    DOMElements.chatInput.addEventListener('keypress', (e) => {
-                        if (e.key === 'Enter' && !e.shiftKey) { // Enter to send, Shift+Enter for newline (if textarea)
-                            e.preventDefault();
-                            processChatMessage();
-                        }
-                    });
-                }
-                if (DOMElements.shoutOutButton) {
-                    DOMElements.shoutOutButton.addEventListener('click', processShoutOut);
-                }
-                if (DOMElements.closeRulesButton) {
-                    DOMElements.closeRulesButton.addEventListener('click', () => {
-                        if (DOMElements.rulesSign) DOMElements.rulesSign.style.display = 'none';
-                    });
-                }
-
-                // Jhoven's Corner Interactivity
-                if (DOMElements.leakedScriptImage) {
-                    DOMElements.leakedScriptImage.addEventListener('click', () => {
-                        const secretMessages = ["HOY! Bawal i-zoom 'yan, sikreto ni Jhoven 'yan!", "Nakita mo ba? Wag mo sabihin kay Adam Silver!", "Ang script ay... MANANALO ANG PUSO!", "TOP SECRET! Baka ma-ban tayo ni Commissioner Jhoven!"];
-                        alert(secretMessages[Math.floor(Math.random() * secretMessages.length)]);
-                    });
-                }
-                if (DOMElements.curryMouthpieceFrame) {
-                    DOMElements.curryMouthpieceFrame.addEventListener('mouseenter', () => { logInfo("Hovered on Curry's Mouthpiece!"); });
-                }
-                if (DOMElements.ironmanVideo) {
-                    DOMElements.ironmanVideo.addEventListener('ended', () => {
-                        displayMessageInChat("Pareng AI", "Astig ng transformation ni Boss Jhoven! Parang NBA player na nag-superhero! 💪", { isAI: true, iconClass: 'fas fa-robot' });
-                    });
-                }
-            }
-
-            // --- Initialization ---
-            function init() {
-                logInfo("Jhoven's Tambayan Chat Initializing...");
-                setupEventListeners();
-                updateGameStatus(); // Initial call
-                setInterval(updateGameStatus, CONFIG.GAME_STATUS_UPDATE_INTERVAL);
-                setInterval(triggerRandomAiInterjection, CONFIG.RANDOM_AI_INTERJECTION_INTERVAL);
-
-                // Welcome message or initial AI message
-                displayMessageInChat("Pareng AI", "Oy mga Paps! Welcome sa Tambayan! Ready na ba kayo sa bakbakan? Sabihin lang '/askparengai [tanong mo]' kung may gusto kayo itanong sakin!", {isAI: true, iconClass: 'fas fa-comments'});
-                logInfo("Jhoven's Tambayan Chat Ready!");
-            }
-
-            init(); // Start the application
-
-        }); // End of DOMContentLoaded
-    </script>
+    <script src="js/global_scripts.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <!-- ADD THIS LINE for the new player JavaScript -->
+    <!-- Make sure it's after Clappr.min.js (which we put in <head>) -->
+  
 </body>
 </html>

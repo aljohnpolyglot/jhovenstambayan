@@ -811,3 +811,67 @@ main.container {
     50% { transform: scale(1.1); opacity: 1; }
     100% { transform: scale(1); opacity: 0.7; }
 }
+/* css/index.css or global.css */
+.live-ticker-container {
+    background-color: #1a1a1a; /* Dark background */
+    color: #fff;
+    padding: 8px 0;
+    overflow: hidden; /* Important for the scrolling effect */
+    border-bottom: 2px solid var(--neon-pink); /* Neon accent */
+    font-family: 'Orbitron', sans-serif; /* Sporty font */
+}
+
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.ticker-move {
+    display: inline-block; /* Allows animation */
+    white-space: nowrap; /* Keeps items in a single line */
+    padding-left: 100%; /* Start off-screen */
+    animation: ticker 30s linear infinite; /* Adjust duration as needed */
+    font-size: 0.9em;
+}
+
+.ticker-move:hover {
+    animation-play-state: paused; /* Pause on hover */
+}
+
+.ticker-item {
+    display: inline-block;
+    padding: 0 2rem; /* Space between items */
+    color: #e0e0e0;
+    border-right: 1px solid #444;
+}
+.ticker-item:last-child {
+    border-right: none;
+}
+
+.ticker-item .team-logo-ticker {
+    height: 18px;
+    width: auto;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+.ticker-item .live-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    margin-right: 5px;
+    animation: blinkLiveDot 1s infinite;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); } /* Adjust based on content width if not enough items */
+}
+
+@keyframes blinkLiveDot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}

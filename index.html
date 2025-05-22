@@ -14,7 +14,7 @@
     <!-- ADD THIS LINE for the Clappr Player Library -->
     <!-- It's good to have this before your custom player.js that uses it -->
     <script src="//cdn.jsdelivr.net/npm/@clappr/player@0.8/dist/clappr.min.js"></script>
-      <script src="js/player.js"></script>
+     
 </head>
 <body>
     <header>
@@ -213,7 +213,26 @@
             </div>
         </div>
     </footer>
-
+  <script>
+        // 4. Clappr Player Initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            var player = new Clappr.Player({
+                source: 'https://live.webcastserver.online/hdstream/embed/151.m3u8',
+                height: '100%', // Set to 100% to use CSS defined height
+                width: '100%',  // Set to 100% to use CSS defined width
+                autoPlay: true, // Set to true for immediate playback if desired
+                playInline: true,
+                // plugins: [], // No extra plugins needed for basic playback
+                shakaConfiguration: { // This is for DASH, but Clappr might use parts or ignore for HLS
+                    preferredAudioLanguage: 'pt-BR', // You can change or remove this
+                    streaming: {
+                        rebufferingGoal: 15
+                    }
+                },
+                parentId: '#player' // Links the player to the div#player
+            });
+        });
+    </script>
     <script src="js/global_scripts.js"></script>
     <script type="module" src="js/main.js"></script>
     <!-- ADD THIS LINE for the new player JavaScript -->
